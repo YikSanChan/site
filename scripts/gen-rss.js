@@ -6,9 +6,9 @@ const matter = require("gray-matter")
 // @TODO: for now let's generate with all posts, unsorted
 async function generate() {
   const feed = new RSS({
-    title: "Shu Ding",
-    site_url: "https://shud.in",
-    feed_url: "https://shud.in/feed.xml",
+    title: "Yik San Chan",
+    site_url: "https://yiksanchan.com",
+    feed_url: "https://yiksanchan.com/rss.xml",
   })
 
   const posts = await fs.readdir(path.join(__dirname, "..", "pages", "posts"))
@@ -33,7 +33,7 @@ async function generate() {
     })
   )
 
-  await fs.writeFile("./public/feed.xml", feed.xml({ indent: true }))
+  await fs.writeFile("./public/rss.xml", feed.xml({ indent: true }))
 }
 
 generate()
