@@ -1,9 +1,9 @@
 import "nextra-theme-blog/style.css"
 import Head from "next/head"
-import Prism from 'prism-react-renderer/prism'
+import Prism from "prism-react-renderer/prism"
 
-(typeof global !== "undefined" ? global : window).Prism = Prism
-require('prismjs/components/prism-scala')
+;(typeof global !== "undefined" ? global : window).Prism = Prism
+require("prismjs/components/prism-scala")
 
 export default function Nextra({ Component, pageProps }) {
   return (
@@ -17,15 +17,15 @@ export default function Nextra({ Component, pageProps }) {
         />
         <script
           async
-          src="https://www.googletagmanager.com/gtag/js?id=G-3LVTK6B002"
+          src="https://www.googletagmanager.com/gtag/js?id=G-QW5M5B4MME"
         />
         <script
           dangerouslySetInnerHTML={{
             __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-3LVTK6B002');
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-QW5M5B4MME');
           `,
           }}
         />
