@@ -10,7 +10,9 @@ I am 陈易生 (Yik San Chan) and I go by "Evan" in English speaking environment
 I grew up in 惠州 (Huizhou), China and I work as a software developer living in San Francisco, US.
 Besides writing code, I also enjoy blogging to learn and teach.
 
-Get in touch via email evan.chanyiksan@gmail.com.
+[Subscribe](https://yiksanchan.com/rss.xml),
+and get in touch via [Twitter](https://twitter.com/yiksanchan) DM
+or email evan.chanyiksan@gmail.com.
 
 ## Experience
 
