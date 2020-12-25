@@ -35,3 +35,4 @@ There are 2 major moves in my career.
 
 - [Stack Overflow](https://stackoverflow.com/users/7550592/yik-san-chan)
 - [GitHub](https://github.com/)
+- [Goodreads](https://www.goodreads.com/yiksanchan)
