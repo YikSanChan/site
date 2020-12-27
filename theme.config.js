@@ -3,7 +3,7 @@ const YEAR = new Date().getFullYear()
 export default {
   footer: (
     <small style={{ display: "block", marginTop: "8rem" }}>
-      <time>{YEAR}</time> © Yik San Chan.
+      <time>{YEAR}</time> © Yik San Chan. Built with <a href="https://vercel.com/">Vercel</a> and <a href="https://nextra.vercel.app/">Nextra</a>.
       <style
         dangerouslySetInnerHTML={{
           __html: `
