@@ -2,7 +2,7 @@
 title: Akka Actors 极简实现
 date: 2020/11/05
 description: 知其然，也知其所以然。
-tag: akka, implement to understand
+tag: akka, implement-to-understand
 author: Yik San Chan
 ---
 

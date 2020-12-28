@@ -2,7 +2,7 @@
 title: Twitter 广告之"道"
 date: 2020/08/11
 description: Accelerating Ad Product Development at Twitter 译文。Twitter 如何完成对单体 AdServer 的微服务化拆分？
-tag: translation, ad systems
+tag: translation, ad-systems
 author: Yik San Chan
 ---
 
