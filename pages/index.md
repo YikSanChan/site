@@ -8,7 +8,7 @@ date: 2020-01-01
 
 I am 陈易生 (Yik San Chan) and I go by "Evan" in English speaking environments.
 I grew up in 惠州 (Huizhou), China and I work as a software developer living in San Francisco, US.
-Besides writing code, I also enjoy blogging to learn and teach.
+Besides writing code, I also [blog](https://yiksanchan.com/posts) to learn and teach.
 
 [Subscribe](https://yiksanchan.com/rss.xml),
 and get in touch via [Twitter](https://twitter.com/yiksanchan) DM

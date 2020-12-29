@@ -1,7 +1,7 @@
 ---
 type: posts
-title: Programming Pearls
+title: Writings
 date: 2020-01-03
 ---
 
-# Programming Pearls
+# Good in, Good out
