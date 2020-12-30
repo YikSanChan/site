@@ -92,3 +92,5 @@ Redis 作者认为 Redlock 比基于复制的分布式锁实现更安全，但�
 - Redis SET 命令文档：[https://redis.io/commands/set#patterns](https://redis.io/commands/set#patterns)
 - Redis ebook 分布式锁章节：[https://redislabs.com/ebook/part-2-core-concepts/chapter-6-application-components-in-redis/6-2-distributed-locking/](https://redislabs.com/ebook/part-2-core-concepts/chapter-6-application-components-in-redis/6-2-distributed-locking/)
 - Martin 对 Redlock 的评论：[https://martin.kleppmann.com/2016/02/08/how-to-do-distributed-locking.html](https://martin.kleppmann.com/2016/02/08/how-to-do-distributed-locking.html)
+
+---

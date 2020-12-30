@@ -35,3 +35,5 @@ Make sure you open port 80 and 443 to source 0.0.0.0/0 in inbound rules. I leave
 If you still have any question regarding hosting Discourse on AWS EC2, feel free to at me `@yiksanchan` on [https://meta.discourse.org/](https://meta.discourse.org/) and I will help if I can.
 
 Happy discoursing!
+
+---

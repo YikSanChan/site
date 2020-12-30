@@ -178,3 +178,5 @@ CRDTs 的研究一直在快速推进，但目前还主要停留在原型（proto
 ## 参考文献
 
 讲义、视频、参考文献请参见[信息页](https://martin.kleppmann.com/2020/07/06/crdt-hard-parts-hydra.html)。
+
+---

@@ -252,3 +252,5 @@ class ActorCell(val self: ActorRef, clazz: Class[_], val dispatcher: Dispatcher)
 [^5] Viktor Klang, Actor. [https://github.com/plokhotnyuk/actors/blob/master/src/test/scala/com/github/gist/viktorklang/Actor.scala](https://github.com/plokhotnyuk/actors/blob/master/src/test/scala/com/github/gist/viktorklang/Actor.scala)
 
 [^6] Li Haoyi, Actor. [https://github.com/lihaoyi/castor/blob/master/castor/src/Actors.scala](https://github.com/lihaoyi/castor/blob/master/castor/src/Actors.scala)
+
+---

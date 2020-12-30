@@ -1,9 +1,24 @@
 const YEAR = new Date().getFullYear()
 
 export default {
+  postFooter: (
+    <p>
+      If you want to give any feedback on this post, please contact me via&nbsp;
+      <strong>
+        <a href="mailto:evan.chanyiksan@gmail.com">email</a>
+      </strong>
+      &nbsp;or&nbsp;
+      <strong>
+        <a href="https://twitter.com/yiksanchan">Twitter</a>
+      </strong>
+      .
+    </p>
+  ),
   footer: (
     <small style={{ display: "block", marginTop: "8rem" }}>
-      <time>{YEAR}</time> © Yik San Chan. Built with <a href="https://vercel.com/">Vercel</a> and <a href="https://nextra.vercel.app/">Nextra</a>.
+      <time>{YEAR}</time> © Yik San Chan. Built with{" "}
+      <a href="https://vercel.com/">Vercel</a> and{" "}
+      <a href="https://nextra.vercel.app/">Nextra</a>.
       <style
         dangerouslySetInnerHTML={{
           __html: `

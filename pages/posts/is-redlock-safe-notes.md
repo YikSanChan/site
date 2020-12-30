@@ -78,3 +78,5 @@ function writeData(filename, data) {
 Redlock 既不安全，也没法变得安全。安全的分布式锁服务需要共识算法的参与，例如[ZooKeeper](https://curator.apache.org/curator-recipes/index.html)。
 
 还有一些感想。尽管算法的形式化证明往往冗长且充满技巧，但仍是非常必要的，因为它清楚地告知使用者，算法的正确性基于哪些假设，存在哪些局限性。这些在非形式化论证中被一笔带过的细节，往往是使用者困惑的根源。
+
+---
