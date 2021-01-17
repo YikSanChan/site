@@ -8,7 +8,8 @@ date: 2020-01-01
 
 I am 陈易生 (Yik San Chan) and I go by "Evan" in English speaking environments.
 I grew up in 惠州 (Huizhou), China and I work as a software developer living in San Francisco, US.
-Besides writing code, I also [blog](https://yiksanchan.com/posts) to learn and teach.
+Besides coding, I also [write](https://yiksanchan.com/posts) to learn and teach.
+I believe in what Richard Feynman said, "What I cannot create, I do not understand".
 
 [Subscribe](https://yiksanchan.com/rss.xml),
 and get in touch via [Twitter](https://twitter.com/yiksanchan) DM
