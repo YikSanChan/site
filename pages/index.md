@@ -34,7 +34,7 @@ There are three major moves in my career.
 - In 2019/04, I joined a startup after working at several big tech companies. I compare the very different experience in [在创业公司做程序员是怎样一种体验？](https://zhuanlan.zhihu.com/p/166491761).
 - In 2018/01, I became a software engineer in 16 months with an Economics background. I explain what I did and saw along the journey in [从经济系毕业生到硅谷程序员](https://zhuanlan.zhihu.com/p/164431792).
 
-## Side hustle
+## Side hustles
 
 海龟龟论坛 ([haiguigui.com](https://haiguigui.com/)) is a community where we share job market observations on both U.S. and China. I co-created it with my girlfriend 京含, because when we were looking for jobs in China, we hoped such a community existed.
 
