@@ -2,7 +2,7 @@
 title: Host Discourse on AWS EC2
 date: 2020/12/02
 description: The official guide only covers DigitalOcean. This post fills the gap.
-tag: notes
+tag: guide
 author: Yik San Chan
 ---
 
