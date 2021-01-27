@@ -113,7 +113,7 @@ I will walk through "how" in the following section.
 
 ## Directory listing with Vercel
 
-Step 1: in the project root directory, create a directory (I call it `_serve`, you can pick whatever name you like) and put all the files you want to serve in that directory. Also, run `git init` to version control the root directory.
+**Step 1**: In the project root directory, create a directory (I call it `_serve`, you can pick whatever name you like) and put all the files you want to serve in that directory. Also, run `git init` to version control the root directory.
 
 ```
 |____ .git
@@ -129,24 +129,24 @@ Step 1: in the project root directory, create a directory (I call it `_serve`, y
 | | | |____...
 ```
 
-Step 2: Run locally with `serve` by running `npx serve _serve`. See [vercel/serve](https://github.com/vercel/serve) for more details. Then go to `[localhost:5000](http://localhost:5000)` and you should be able to see:
+**Step 2**: Run locally with `serve` by running `npx serve _serve`. See [vercel/serve](https://github.com/vercel/serve) for more details. Then go to `[localhost:5000](http://localhost:5000)` and you should be able to see:
 
 ![Local vercel root](/images/free-and-simple-directory-listing-with-vercel/local-vercel-root.png)
 
-Step 3: git push the root directory to GitHub, and [connect Vercel with your GitHub project](https://vercel.com/docs/git#deploying-a-git-repository). In my case, my GitHub project is named "fileserve", therefore the Vercel project is also called "fileserve". See the [fileserve GitHub project](https://github.com/YikSanChan/fileserve).
+**Step 3**: Run `git push` in the root directory to GitHub, and [connect Vercel with your GitHub project](https://vercel.com/docs/git#deploying-a-git-repository). In my case, my GitHub project is named "fileserve", therefore the Vercel project is also called "fileserve". See the [fileserve GitHub project](https://github.com/YikSanChan/fileserve).
 
-Step 4: In Vercel dashboard, click into the fileserve project, go to Settings, and set Root Directory as "_serve". You need to input the directory name you gave.
+**Step 4**: In Vercel dashboard, click into the fileserve project, go to Settings, and set Root Directory as "_serve". You need to input the directory name you gave.
 
 ![Vercel settings root directory](/images/free-and-simple-directory-listing-with-vercel/vercel-settings-root-directory.png)
 
-Step 5: Still in Settings, toggle Directory Listing to "Enabled".
+**Step 5**: Still in Settings, toggle Directory Listing to "Enabled".
 
 ![Vercel settings directory listing](/images/free-and-simple-directory-listing-with-vercel/vercel-settings-directory-listing.png)
 
-Step 6: Go to the deployment URL [https://fileserve.yishengdd.vercel.app](https://fileserve.yishengdd.vercel.app) and find the slides as I show in the beginning at [https://fileserve.yishengdd.vercel.app/open-courses/ucbcs186_fa2020](https://fileserve.yishengdd.vercel.app/open-courses/ucbcs186_fa2020). All set!
+**Step 6**: Go to the deployment URL [https://fileserve.yishengdd.vercel.app](https://fileserve.yishengdd.vercel.app) and find the slides as I show in the beginning at [https://fileserve.yishengdd.vercel.app/open-courses/ucbcs186_fa2020](https://fileserve.yishengdd.vercel.app/open-courses/ucbcs186_fa2020). All set!
 
 ## Conclusion
 
-Try [Vercel](https://vercel.com)! It is a free and simple directory listing solution, that gives you friendly URLs and browsable PDFs!
+Try [Vercel](https://vercel.com)! It provides a free and simple directory listing solution, that gives you friendly URLs and browsable PDFs!
 
 ---
