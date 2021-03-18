@@ -52,7 +52,7 @@ According to our criteria:
 
 ### Code hosting service: GitHub and friends
 
-GitHub and GitLab host and version-control your code, but people do sometimes store non-code content (including PDF files) on the sites. Sharing the files to the public is nothing more than pushing your files to a public repository. An example can be found at [https://github.com/YikSanChan/fileserve/blob/main/_serve/open-courses/ucbcs186_fa2020/01-intro.pdf](https://github.com/YikSanChan/fileserve/blob/main/_serve/open-courses/ucbcs186_fa2020/01-intro.pdf).
+GitHub and GitLab host and version-control your code, but people do sometimes store non-code content (including PDF files) on the sites. Sharing the files to the public is nothing more than pushing your files to a public repository. An example can be found at [https://github.com/YikSanChan/fileserve/blob/main/\_serve/open-courses/ucbcs186_fa2020/01-intro.pdf](https://github.com/YikSanChan/fileserve/blob/main/_serve/open-courses/ucbcs186_fa2020/01-intro.pdf).
 
 ![GitHub preview](/images/free-and-simple-directory-listing-with-vercel/github-preview.png)
 
@@ -61,7 +61,7 @@ According to our criteria:
 - Free (✅).
 - Simple (✅): To developers.
 - URL friendly (〰️): Both directories and files are accessible via reasonable URLs. However, the URL includes less useful information such as `/blob/main`, and the domain is not customizable.
-- Browsable (〰️): It renders the PDF content in a canvas, which looks ok. However, if the PDF file is too large, it will not render. There is a workaround if you know how to get the raw URL of the PDF file (by digging into the Chrome developer tool and check the networks, in this case, the raw URL is [https://raw.githubusercontent.com/YikSanChan/fileserve/b0ac4f614c39c85b81cb070234565c3ac243abb0/_serve/open-courses/ucbcs186_fa2020/01-intro.pdf](https://raw.githubusercontent.com/YikSanChan/fileserve/b0ac4f614c39c85b81cb070234565c3ac243abb0/_serve/open-courses/ucbcs186_fa2020/01-intro.pdf)), but that takes extra knowledge and requires a download.
+- Browsable (〰️): It renders the PDF content in a canvas, which looks ok. However, if the PDF file is too large, it will not render. There is a workaround if you know how to get the raw URL of the PDF file (by digging into the Chrome developer tool and check the networks, in this case, the raw URL is [https://raw.githubusercontent.com/YikSanChan/fileserve/b0ac4f614c39c85b81cb070234565c3ac243abb0/\_serve/open-courses/ucbcs186_fa2020/01-intro.pdf](https://raw.githubusercontent.com/YikSanChan/fileserve/b0ac4f614c39c85b81cb070234565c3ac243abb0/_serve/open-courses/ucbcs186_fa2020/01-intro.pdf)), but that takes extra knowledge and requires a download.
 
 ### Self hosting
 
@@ -103,11 +103,11 @@ According to our criteria:
 In summary, Vercel wins.
 
 | Solutions            | Free | Simple | URL friendly | Browsable |
-|----------------------|------|--------|--------------|-----------|
-| File storage service | ✅    | ✅      | ❌            | 〰️        |
-| Code hosting service | ✅    | ✅      | 〰️           | 〰️        |
-| Self hosting         | ❌    | ❌      | ✅            | ✅         |
-| Vercel               | ✅    | ✅      | ✅            | ✅         |
+| -------------------- | ---- | ------ | ------------ | --------- |
+| File storage service | ✅   | ✅     | ❌           | 〰️        |
+| Code hosting service | ✅   | ✅     | 〰️           | 〰️        |
+| Self hosting         | ❌   | ❌     | ✅           | ✅        |
+| Vercel               | ✅   | ✅     | ✅           | ✅        |
 
 I will walk through "how" in the following section.
 
@@ -135,7 +135,7 @@ I will walk through "how" in the following section.
 
 **Step 3**: Run `git push` in the root directory to GitHub, and [connect Vercel with your GitHub project](https://vercel.com/docs/git#deploying-a-git-repository). In my case, my GitHub project is named "fileserve", therefore the Vercel project is also called "fileserve". See the [fileserve GitHub project](https://github.com/YikSanChan/fileserve).
 
-**Step 4**: In Vercel dashboard, click into the fileserve project, go to Settings, and set Root Directory as "_serve". You need to input the directory name you gave.
+**Step 4**: In Vercel dashboard, click into the fileserve project, go to Settings, and set Root Directory as "\_serve". You need to input the directory name you gave.
 
 ![Vercel settings root directory](/images/free-and-simple-directory-listing-with-vercel/vercel-settings-root-directory.png)
 

@@ -257,8 +257,8 @@ According to [the thread](https://stackoverflow.com/a/24154479/7550592), `lockIn
 According to [the thread](http://mail.openjdk.java.net/pipermail/core-libs-dev/2010-May/004165.html), it is "an extreme optimization".
 
 > It's a coding style made popular by Doug Lea. It's an extreme optimization that probably isn't necessary;
-you can expect the JIT to make the same optimizations. (you can try to check the machine code yourself!)
-Nevertheless, copying to locals produces the smallest bytecode, and for low-level code it's nice to write code that's a little closer to the machine.
+> you can expect the JIT to make the same optimizations. (you can try to check the machine code yourself!)
+> Nevertheless, copying to locals produces the smallest bytecode, and for low-level code it's nice to write code that's a little closer to the machine.
 
 **D. Missing methods.**
 
