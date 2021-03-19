@@ -35,7 +35,7 @@ Riviera uses Flink SQL as DSL for feature engineering, because:
 - It is a proven approach as shown by User's [Michelangelo](https://eng.uber.com/michelangelo-machine-learning-platform/) and Airbnb's [Zipline](https://databricks.com/session/zipline-airbnbs-machine-learning-data-management-platform).
 - Flink SQL is mature enough with contributions from Uber, Alibaba, etc.
 
-While Flink SQL is good at feature transformation logic, it is weird to define the underlying infrastructure with. YAML works great in this front (think of k8s). This is how users define the feature "total orders confirmed by a store in the last 30 minutes" in Riviera:
+While Flink SQL is good at feature transformation logic, it is weird to define the underlying infrastructure with (think of the `WITH ('connector' = 'kafka', 'properties.bootstrap.servers' = '...')` section). YAML works great in this front (think of k8s). This is how users define the feature "total orders confirmed by a store in the last 30 minutes" in Riviera:
 
 ```yaml
 source:
