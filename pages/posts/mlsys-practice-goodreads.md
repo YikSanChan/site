@@ -62,7 +62,7 @@ compute:
 
 Comments:
 
-- The marriage of Flink SQL (for compute) and YAML (for infra) in beautiful.
+- The marriage of Flink SQL (for compute) and YAML (for infra) is beautiful.
 - Everyone likes Protobuf, no? (Note the `proto-class` field above)
 
 ### ML Feature Serving Infrastructure at Lyft
