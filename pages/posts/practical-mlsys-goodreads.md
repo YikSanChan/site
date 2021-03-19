@@ -1,12 +1,12 @@
 ---
-title: MLSys Practice Goodreads
+title: Practical MLSys Goodreads
 date: 2021/03/17
-description: Goodreads on practical ML systems, and comments.
+description: An updating list of practical MLSys readings with comments.
 tag: notes, ml-sys
 author: Yik San Chan
 ---
 
-# MLSys Practice Goodreads
+# Practical MLSys Goodreads
 
 ## Feature Store
 
@@ -16,7 +16,7 @@ author: Yik San Chan
 
 The post introduces a coherent conceptual framework to understand what make a feature store. I will use it as a starting point and refer to it as "Feast-architecture" or "Feast's" from here on, so please **READ THIS FIRST**.
 
-![general-feature-store-architecture](/images/mlsys-practice-goodreads/general-feature-store-architecture.png)
+![general-feature-store-architecture](/images/practical-mlsys-goodreads/general-feature-store-architecture.png)
 
 ### Rethinking Feature Stores
 
@@ -74,7 +74,7 @@ Introduce how Lyft build feature store. The architecture is very similar to Feas
 - Ingestion: Offline feature store (Hive) writes data to the online feature store (DynamoDB) through Dynamo Streams (maybe CDC).
 - Storage: Elasticsearch feature store is in place for advanced queries.
 
-![lyft feature service architecture](/images/mlsys-practice-goodreads/lyft-feature-service-architecture.png)
+![lyft feature service architecture](/images/practical-mlsys-goodreads/lyft-feature-service-architecture.png)
 
 Comments:
 
