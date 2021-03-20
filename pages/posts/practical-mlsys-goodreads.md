@@ -85,7 +85,7 @@ Comments:
 
 [Link](https://doordash.engineering/2020/11/19/building-a-gigascale-ml-feature-store-with-redis/). By Arbaz Khan and Zohaib Sibte Hassan at DoorDash, 2021/03.
 
-DoorDash dives deep into how to store and access billions of feature-value pairs efficiently.
+DoorDash figures out an approach to store billions of feature-value pairs and handle millions of requests per second, both efficiently. Here's how.
 
 First, the team decides Redis has lowest read latency and CPU utilization after a [YCSB](https://github.com/brianfrankcooper/YCSB) benchmarking against Redis, CockroachDB, ScyllaDB, Cassandra and YugabyteDB.
 
