@@ -81,14 +81,31 @@ Comments:
 - Ingestion: The CDC approach is very specific to the database in use.
 - Storage: What are the advanced queries that ML practitioners do?
 
+### Building a Gigascale ML Feature Store with Redis, Binary Serialization, String Hashing, and Compression
+
+[Link](https://doordash.engineering/2020/11/19/building-a-gigascale-ml-feature-store-with-redis/). By Arbaz Khan and Zohaib Sibte Hassan at DoorDash, 2021/03.
+
+DoorDash dives deep into how to store and access billions of feature-value pairs efficiently.
+
+First, the team decides Redis has lowest read latency and CPU utilization after a [YCSB](https://github.com/brianfrankcooper/YCSB) benchmarking against Redis, CockroachDB, ScyllaDB, Cassandra and YugabyteDB.
+
+![DoorDash DB latency benchmarking](/images/practical-mlsys-goodreads/doordash-db-latency-benchmarking.png)
+
+![DoorDash DB CPU utilization benchmarking](/images/practical-mlsys-goodreads/doordash-db-cpu-utilization-benchmarking.jpeg)
+
+Then, the team explores further optimizations to reduce Redis' memory footprint and CPU utilization:
+
+1. Store features as entity's Hash rather than a flat list of k-v pairs: `HSET entity_id feature_name feature_value`.
+1. Compress key using xxHash: `HSET entity_id XXHash32(feature_name) feature_value`.
+1. Store float values as plain string, and compress int lists with Snappy.
+1. Byte-encode (rather than compress) embeddings using protobuf.
+
 ### The Feature Store for AI
 
 [Link](https://medium.com/swlh/the-feature-store-for-ai-45dea7922063). By Chang She at Tubi, 2020/12.
 
 Ask a good question: ML Tooling for **unstructured** data (images, videos, etc) has not caught up.
 
-Comments:
-
-- [Activeloop](https://github.com/activeloopai/hub) allows users to read unstructured data just as a `pandas.DataFrame`, from multiple sources (s3 etc). Chang and friends are also working on [rikai](https://github.com/eto-ai/rikai).
+Comment: [Activeloop](https://github.com/activeloopai/hub) allows users to read unstructured data just as a `pandas.DataFrame`, from multiple sources (s3 etc). Chang and friends are also working on [rikai](https://github.com/eto-ai/rikai).
 
 ---
