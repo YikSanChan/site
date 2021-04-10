@@ -14,20 +14,7 @@ export default function Nextra({ Component, pageProps }) {
           title="RSS"
           href="/rss.xml"
         />
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-QW5M5B4MME"
-        />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-QW5M5B4MME');
-          `,
-          }}
-        />
+        <script async src="https://cdn.splitbee.io/sb.js"></script>
       </Head>
       <Component {...pageProps} />
     </>
