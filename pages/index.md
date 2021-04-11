@@ -20,7 +20,7 @@ or email evan.chanyiksan@gmail.com.
 
 Here are a list of what I did in a reverse chronological order.
 
-- 2021/02-now: Building ML infrastructure (think of [Uber Michelangelo](https://eng.uber.com/michelangelo-machine-learning-platform/)) at [PalFish](https://www.crunchbase.com/organization/palfish).
+- 2021/02-now: Building ML infrastructure (think of [Uber Michelangelo](https://eng.uber.com/michelangelo-machine-learning-platform/)) at [PalFish](https://www.crunchbase.com/organization/palfish). I am hiring!
 - 2021/01: Moved back to China!
 - 2019/04-2020/12: Built Tubi's ad systems from scratch. Find more details in [this post](https://code.tubitv.com/a-fully-reactive-ad-serving-platform-using-scala-akka-streams-13299e7ea04e) and [another post](https://code.tubitv.com/a-fully-reactive-ad-serving-platform-using-scala-akka-streams-b2a3526be6a0) from my CTO.
 - 2018/09-2019/04: Revamped [Twitter Ads API](https://developer.twitter.com/en/docs/twitter-ads-api).
