@@ -100,6 +100,20 @@ Then, the team explores further optimizations to reduce Redis' memory footprint 
 1. Store float values as plain string, and compress int lists with Snappy.
 1. Byte-encode (rather than compress) embeddings using protobuf.
 
+### AI/ML needs a Key-Value store, and Redis is not up to it
+
+[Link](https://www.logicalclocks.com/blog/ai-ml-needs-a-key-value-store-and-redis-is-not-up-to-it) by Mikael Ronström and Jim Dowling at Logical Clocks, 2021/02.
+
+Redis is a popular option for online feature storage ([DoorDash](https://doordash.engineering/2020/11/19/building-a-gigascale-ml-feature-store-with-redis/), [Feast](https://github.com/feast-dev/feast-spark/tree/master/spark/ingestion/src/main/scala/feast/ingestion/stores/redis), etc), but Logical Clocks challenges it. Mikael, creator of [NDB Cluster](https://en.wikipedia.org/wiki/NDB_Cluster), builds [RonDB](https://www.rondb.com/) as an online feature storage option.
+
+The post compares RonDB vs. Redis from 3 perspectives.
+
+- Performance. This is where RonDB shines. With benchmarking, it claims lower latency, much higher throughput, availability and scalability provided RonDB's third-generation multithreaded architecture. It says Redis is still at the first generation.
+- Database capabilities. RonDB supports transactions and SQL.
+- User friendliness. NDB Cluster has an undeserved reputation of being challenging to configure and operate. RonDB overcomes this limitation by its presence on AWS and Azure.
+
+My two-cents: it is always good to know more options, but I believe Redis can serve my use case very well for a very long period.
+
 ### The Feature Store for AI
 
 [Link](https://medium.com/swlh/the-feature-store-for-ai-45dea7922063). By Chang She at Tubi, 2020/12.
