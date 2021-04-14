@@ -22,7 +22,7 @@ Feast 孵化于东南亚网约车巨头 [GoJek](https://www.gojek.com/) 的数�
 
 先说特征生产。Feast 不生产特征，Feast 只是特征的搬运工，搬运的起点是特征源。用户负责用 Spark 或 Flink 等工具编写特征生成管道，将数据从批数据源和流数据源中抽取并转换成所需特征，写入批特征源和流特征源。目前，Feast 支持包括 S3/HDFS/BigQuery 在内的批特征源，支持 Kafka 为流特征源。对于用户关心的一组特征，用户需要为 Feast 指定批特征源和流特征源的地址。
 
-在 Feast 与特征源对接上以后，一旦用户手动或通过工作流引擎下达特征注入指令，Feast 就会触发 Spark/Airflow 工作流，将特征从特征源中取出，写入基于 Redis/Cassandra/Firestore 的在线特征存储。在目前版本的 Feast 中，批特征源直接充当了离线特征存储的角色。
+在 Feast 与特征源对接上以后，一旦用户手动或通过工作流引擎下达特征注入指令，Feast 就会触发 Spark/Python 工作流，将特征从特征源中取出，写入基于 Redis/Cassandra/Firestore 的在线特征存储。在目前版本的 Feast 中，批特征源直接充当了离线特征存储的角色。
 
 当特征在特征存储中落库后，基于存储提供特征访问服务便顺理成章。Feast 支持在线推理服务通过 gRPC 或基于 gRPC 的 SDK 访问在线特征存储，同时支持批量训练和批量预测等任务通过 Python SDK 访问离线特征存储。
 
@@ -41,8 +41,8 @@ Feast 孵化于东南亚网约车巨头 [GoJek](https://www.gojek.com/) 的数�
 
 除了「专精」，Feast 还开始关注注重「插件化」。对于上述几乎一切涉及专用技术栈的地方，Feast 社区都打算支持用户自定义插件，例如：
 
-- 特征注入工作流。Feast 截至 0.9 的版本提供了基于 Spark 的实现，计划在 0.10 版本增加基于 Airflow 和 Python 的实现，并在之后的版本支持自定义实现。
-- 在线特征存储。Feast 截至 0.9 的版本提供了基于 Redis 的实现，计划在 0.10 版本增加基于 Cassandra 和 Firestore 的实现，并在之后的版本支持自定义实现。
+- 特征注入工作流。Feast 截至 0.9 的版本提供了基于 Spark 的实现，计划在 0.10 版本增加基于 Python 的实现，并在之后的版本支持自定义实现。
+- 在线特征存储。Feast 截至 0.9 的版本提供了基于 Redis 的实现，计划在 0.10 版本增加基于 Firestore 的实现，并在之后的版本支持自定义实现。
 
 「易用」也是 Feast 在努力改进的地方。在截至 0.9 的版本，Feast 只提供了 on Kubernetes 的部署选项，基础架构方面陡峭的学习曲线让很多小规模的数据科学团队难以快速上手。Feast 的 0.10 版本将目标定为 All you need is `pip install feast`，特征注入可以发生在一台安装了 Python 环境的服务器上，而无需在验证阶段或者项目早期去学习 Kubernetes/Spark/Redis 这一套数据科学家所陌生的技术栈。
 
