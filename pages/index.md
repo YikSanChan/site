@@ -7,7 +7,7 @@ date: 2020-01-01
 # 陈易生
 
 I am 陈易生 (Yik San Chan) and I go by "Evan" in English speaking environments.
-I grew up in 惠州 (Huizhou), and currently I work as a software developer in 北京（Beijing）,
+I grew up in 惠州 (Huizhou), and currently I work as a software developer in 北京 (Beijing),
 after spending a few years in San Francisco Bay Area.
 Besides coding, I also [write](https://yiksanchan.com/posts) to learn and teach.
 I believe in what Richard Feynman said, "What I cannot create, I do not understand".
@@ -18,9 +18,9 @@ or email evan.chanyiksan@gmail.com.
 
 ## Experience
 
-Here are a list of what I did in a reverse chronological order.
+What I did?
 
-- 2021/02-now: Building ML infrastructure (think of [Uber Michelangelo](https://eng.uber.com/michelangelo-machine-learning-platform/)) at [伴鱼 (PalFish)](https://www.crunchbase.com/organization/palfish). I am hiring!
+- 2021/02-now: Building ML infrastructure (think of [Uber Michelangelo](https://eng.uber.com/michelangelo-machine-learning-platform/)) at [伴鱼 (PalFish)](https://www.crunchbase.com/organization/palfish). We're hiring!
 - 2021/01: Moved back to China!
 - 2019/04-2020/12: Built Tubi's ad systems from scratch. Find more details in [this post](https://code.tubitv.com/a-fully-reactive-ad-serving-platform-using-scala-akka-streams-13299e7ea04e) and [another post](https://code.tubitv.com/a-fully-reactive-ad-serving-platform-using-scala-akka-streams-b2a3526be6a0) from my CTO.
 - 2018/09-2019/04: Revamped [Twitter Ads API](https://developer.twitter.com/en/docs/twitter-ads-api).
