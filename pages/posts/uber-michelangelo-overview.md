@@ -1,12 +1,12 @@
 ---
-title: Uber Michelangelo 概述
+title: Uber Michelangelo 机器学习平台概述
 date: 2021/04/11
-description: Michelangelo 是 Uber 的机器学习平台。
+description: Uber 的机器学习平台是如何设计的？
 tag: ml-sys, notes
 author: Yik San Chan
 ---
 
-# Uber Michelangelo 概述
+# Michelangelo - Uber 机器学习平台概述
 
 Uber 多业务、多场景，有很强的 ML 需求，积累了丰富的 ML 实践，沉淀出成熟的 ML 平台 Michelangelo（以下简称为平台），并慷慨地通过技术博客、公开演讲和开源软件等形式，展现出平台在不同发展阶段的权衡、技术选型和着力点，让我们得以窥见一个成熟的 ML 平台的发展历程，对我们从零开始搭建 ML 平台有不小的借鉴意义。
 
