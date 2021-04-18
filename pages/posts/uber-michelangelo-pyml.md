@@ -132,4 +132,8 @@ assert batch_job.wait() == 'success'
 
 初代 Michelangelo 平台在「高性能还是高速迭代」之间选择了高性能。补充了 PyML 的新生代平台说，「我全都要」。
 
+## 参考文献
+
+- [Michelangelo PyML: Introducing Uber’s Platform for Rapid Python ML Model Development](https://eng.uber.com/michelangelo-pyml/)
+
 ---
