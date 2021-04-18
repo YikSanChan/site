@@ -1,5 +1,5 @@
 ---
-title: Uber Michelangelo 机器学习平台概述
+title: Michelangelo - Uber 机器学习平台概述
 date: 2021/04/11
 description: Uber 的机器学习平台是如何设计的？
 tag: ml-sys, notes
