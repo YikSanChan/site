@@ -2,17 +2,14 @@ const YEAR = new Date().getFullYear()
 
 export default {
   postFooter: (
-    <p>
-      If you want to give any feedback on this post, please contact me via&nbsp;
-      <strong>
-        <a href="mailto:evan.chanyiksan@gmail.com">email</a>
-      </strong>
-      &nbsp;or&nbsp;
-      <strong>
-        <a href="https://twitter.com/yiksanchan">Twitter</a>
-      </strong>
-      .
-    </p>
+    <div
+      id="cusdis_thread"
+      data-host="https://yiksanchan-cusdis.vercel.app"
+      data-app-id="4701644f-ed94-41d5-9c2b-4a2a630dec30"
+      data-page-id="{{ PAGE_ID }}"
+      data-page-url="{{ PAGE_URL }}"
+      data-page-title="{{ PAGE_TITLE }}"
+    />
   ),
   footer: (
     <small style={{ display: "block", marginTop: "8rem" }}>

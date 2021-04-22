@@ -15,6 +15,10 @@ export default function Nextra({ Component, pageProps }) {
           href="/rss.xml"
         />
         <script async src="https://cdn.splitbee.io/sb.js"></script>
+        <script
+          async
+          src="https://yiksanchan-cusdis.vercel.app/js/cusdis.es.js"
+        ></script>
       </Head>
       <Component {...pageProps} />
     </>
