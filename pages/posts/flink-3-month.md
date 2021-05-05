@@ -84,10 +84,10 @@ Python 是机器学习的法定编程语言 🐶。因此 [PyFlink](https://ci.a
 
 第一，Flink 的生态完整性还比较弱。以 Flink + Python 为例，如果拿 PyFlink 和 PySpark 对比，Stack Overflow 上 [pyflink 标签](https://stackoverflow.com/questions/tagged/pyflink)下的问题不足 100 个，而 [pyspark 标签](https://stackoverflow.com/questions/tagged/pyspark)下的问题有 27000 多个 😥 。再以 Flink + ML 为例，Flink ML 在 Apache 上刚刚有一个[家](https://github.com/apache/flink-ml)，跟 Spark ML 的成熟度暂时还不能比。
 
-第二，Flink 的商业化程度比较低。这里定义的「商业化程度」是指——一家主导公司靠这个技术能赚多少钱。我们倾向于认为，一门技术的商业化程度越高，越不容易凉，想想 340 亿美元卖给 IBM 的 RedHat（Linux），市值 100 多亿美元的 Elastic（ElasticSearch），市值 180 多亿美元的 MongoDB，和估值 280 亿美元的 Databricks（Spark）。遗憾的是，虽然 Flink 的开源社区十分活跃，但背后的商业公司 Ververica 在[成为阿里巴巴的一部分](https://techcrunch.com/2019/01/08/alibaba-data-artisans/)后，远没有 Spark 背后的商业公司 Databricks 那样瞩目，Ververica 前 CTO [Fabian Hueske](https://github.com/fhueske) 也离开公司，加入市值 680 亿美元的 Snowflake 了 😂。（以上数据截至 2021 年 4 月 25 日）
+第二，Flink 的商业化程度比较低。这里定义的「商业化程度」是指——一家主导公司靠这个技术能赚多少钱。我们倾向于认为，一门技术的商业化程度越高，越不容易凉，想想 340 亿美元卖给 IBM 的 RedHat（Linux），市值 100 多亿美元的 Elastic（ElasticSearch），市值 180 多亿美元的 MongoDB，和估值 280 亿美元的 Databricks（Spark）。遗憾的是，虽然 Flink 的开源社区十分活跃，但背后的商业公司 Ververica 在[成为阿里巴巴的一部分](https://techcrunch.com/2019/01/08/alibaba-data-artisans/)后，远没有 Spark 背后的商业公司 Databricks 那样瞩目，Ververica co-founder [Fabian Hueske](https://github.com/fhueske) 也离开公司，加入市值 680 亿美元的 Snowflake 了 😂。（以上数据截至 2021 年 4 月 25 日）
 
 ## 总结
 
-在伴鱼 ML 平台的早期探索中，Flink 很好地完成了特征工程和批量推理的任务。我们期待伴鱼的 ML 平台能与 Flink 共同演进，尽可能地提高 ML 平台的效率。
+在伴鱼 ML 平台的早期探索中，Flink 很好地完成了特征工程和批量推理的任务。我们期待伴鱼的 ML 平台能与 Flink 共同演进，尽可能地提高效率。
 
 ---
