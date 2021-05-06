@@ -43,23 +43,24 @@ Flink 对流处理的认识，比 [Spark](https://spark.apache.org/) 先进一�
 
 ## 分层 API
 
-正如 [TensorFlow](https://www.tensorflow.org/) 同时提供了底层的 API 和抽象层次更高的 [Keras](https://keras.io/) API 一样，Flink 也同时提供底层的 [DataStream API](https://ci.apache.org/projects/flink/flink-docs-stable/dev/datastream_api.html) 和声明式的 [SQL API](https://ci.apache.org/projects/flink/flink-docs-release-1.12/dev/table/)。其实官方还提供了 Table API，但 Table API 的表达能力和 SQL 相同，却更难读。
+正如 [TensorFlow](https://www.tensorflow.org/) 同时提供了底层的 API 和抽象层次更高的 [Keras](https://keras.io/) API 一样，Flink 也同时提供底层的 [DataStream API](https://ci.apache.org/projects/flink/flink-docs-stable/dev/datastream_api.html) 和声明式的 [Table / SQL API](https://ci.apache.org/projects/flink/flink-docs-release-1.12/dev/table/)。
 
-DataStream API 相比 SQL API 有两个优点：
+首先比较 Table API 和 SQL API：
+
+- SQL API 基本没有额外的学习成本，大家都会写 SQL。
+- Table API 表达能力略强，支持了一些在标准 SQL 中不支持的语义，包括以行为单位的 map 和 flatMap 操作，详情见[文档](https://ci.apache.org/projects/flink/flink-docs-release-1.13/docs/dev/python/table/operations/row_based_operations/)。
+
+下面比较 DataStream API 和 Table / SQL API。前者的优势在于：
 
 - 更强的表达能力。理论上，SQL API 的表达能力只是 DataStream API 的一个子集，因为 SQL API 调用在执行时会被转译为 DataStream API 调用。但随着 Flink 对 SQL 的支持越来越好，SQL 配合 [UDFs](https://ci.apache.org/projects/flink/flink-docs-stable/dev/table/functions/udfs.html) 的表达能力已经能在大部分情况下匹配 DataStream API 的表达能力。
 - 更精细的控制。例如，[The Broadcast State Pattern](https://ci.apache.org/projects/flink/flink-docs-release-1.12/dev/stream/state/broadcast_state.html) 只能通过 DataStream API 实现。
 
-SQL API 的优点则是：
+Table / SQL API 的优势在于：
 
 - 简单，不用学 Java / Scala。
 - 更容易被执行引擎优化。
 
-基于以上分析，我们初步决定：
-
-- 不使用 Table API。
-- 能用 SQL 做的，都用 SQL 做。
-- 用 SQL 做不了或者难做的，用 DataStream API 做。
+基于以上分析，我们初步决定优先选择 SQL API，其次是 Table API，最后是 DataStream API。
 
 ## Python 和 ML 支持
 
