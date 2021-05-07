@@ -122,4 +122,10 @@ Ask a good question: ML Tooling for **unstructured** data (images, videos, etc) 
 
 Comment: [Activeloop](https://github.com/activeloopai/hub) allows users to read unstructured data just as a `pandas.DataFrame`, from multiple sources (s3 etc). Chang and friends are also working on [rikai](https://github.com/eto-ai/rikai).
 
+### Optimal Feature Discovery: Better, Leaner Machine Learning Models Through Information Theory
+
+[Link](https://eng.uber.com/optimal-feature-discovery-ml/). By Adam Wang, Olcay Cirit, Amit Nene, and Niel Teng Hu at Uber, 2021/05.
+
+Feature stores host a lot of features. The question is, how to use the large feature pool to make models better - smaller size, and 
+
 ---
