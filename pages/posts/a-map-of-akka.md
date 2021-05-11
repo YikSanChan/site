@@ -3,7 +3,7 @@ title: Akka 导图
 date: 2020/06/12
 description: A Map of Akka 译文。Akka 各模块之间究竟是个什么关系？
 tag: translation, akka
-author: Yik San Chan
+author: 陈易生
 ---
 
 # Akka 导图

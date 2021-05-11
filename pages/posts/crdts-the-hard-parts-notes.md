@@ -3,7 +3,7 @@ title: CRDTs The Hard Parts 笔记
 date: 2020/10/11
 description: DDIA 作者 Martin Kleppmann 介绍 CRDTs 领域的最新研究成果。
 tag: notes, dist-sys
-author: Yik San Chan
+author: 陈易生
 ---
 
 # CRDTs The Hard Parts 笔记

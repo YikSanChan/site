@@ -3,7 +3,7 @@ title: 浅谈特征平台 Feast
 date: 2021/04/11
 description: 什么是特征平台 Feast ？
 tag: ml-sys, notes
-author: Yik San Chan
+author: 陈易生
 ---
 
 # 浅谈特征平台 Feast

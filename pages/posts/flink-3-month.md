@@ -3,7 +3,7 @@ title: 浅谈 Flink
 date: 2021/05/05
 description: 使用 Flink 三个月以来的一些体会。
 tag: flink
-author: Yik San Chan
+author: 陈易生
 ---
 
 # 浅谈 Flink

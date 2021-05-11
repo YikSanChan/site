@@ -3,7 +3,7 @@ title: PyML = Uber Michelangelo + Python
 date: 2021/04/17
 description: 是要高性能，还是高速迭代？PyML 说，我全都要。
 tag: ml-sys, notes
-author: Yik San Chan
+author: 陈易生
 ---
 
 # PyML = Uber Michelangelo + Python
