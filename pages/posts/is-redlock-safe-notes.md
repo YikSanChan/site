@@ -3,7 +3,7 @@ title: Redlock 真的安全吗？
 date: 2020/10/29
 description: Martin Kleppmann 对 Redlock 安全性的质疑。
 tag: notes, dist-sys
-author: Yik San Chan
+author: 陈易生
 ---
 
 # Redlock 真的安全吗？

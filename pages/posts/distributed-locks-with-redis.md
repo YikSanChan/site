@@ -3,7 +3,7 @@ title: 用 Redis 实现分布式锁
 date: 2020/10/26
 description: Redis 分布式锁相关文档的梳理。
 tag: notes, dist-sys
-author: Yik San Chan
+author: 陈易生
 ---
 
 # 用 Redis 实现分布式锁
