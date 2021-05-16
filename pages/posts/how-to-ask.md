@@ -22,7 +22,13 @@ author: 陈易生
 
 如何认真提问？
 
-首先，态度要端正，尽力避免在问题描述中，包含错别字、格式不规整的代码、失效链接、和非必要贴图，它们能轻松摧毁助人为乐之心。错别字和格式不规整的代码会严重影响读者的理解；失效链接会丢失重要信息，带来后续不必要的追问；非必要贴图更致命，读者往往需要浪费很多时间把贴图上的错误日志打下来，上网搜，或者把代码敲出来，去复现。要做到态度端正，我们不妨在提问前问问自己：
+首先，态度要端正，尽力避免在问题描述中包含让人不想帮你的因素，包括：
+
+- 错别字和格式不规整的代码。它们会严重影响读者的理解。
+- 失效链接。它们会丢失重要信息，带来后续不必要的追问。
+- 非必要贴图。读者往往需要浪费很多时间把贴图上的错误日志打下来，上网搜，或者把代码敲出来，去复现。
+
+要做到态度端正，我们不妨在提问前问问自己：
 
 - 如果回答我们问题的人，是个一小时收费 2000 块钱的律师，我们会不会这样提问？
 - 如果我们是回答问题的人，看到这样的问题，愿不愿意去帮忙？
@@ -42,19 +48,19 @@ author: 陈易生
 
 下面我不要脸地用自己在 Flink 邮件列表中的[一次提问](http://apache-flink-user-mailing-list-archive.2336050.n4.nabble.com/PyFlink-called-already-closed-and-NullPointerException-td42997.html)作为例子，这个提问在 [Flink 中文社区：如何从 0 到 1 开发 PyFlink 作业](https://mp.weixin.qq.com/s/GyFTjQl6ch8jc733mpCP7Q)一文中被引用为好的提问示例，见文章引用链接的第 7 条。
 
-第一步，来看问题的标题。提问表明，这是 PyFlink 相关的问题，报错信息包括 "called already closed" 和 NullPointerException。
+第一步，标题。示例提问表明，这是 PyFlink 相关的问题，报错信息包括 "called already closed" 和 "NullPointerException" 这两个关键词。
 
 > PyFlink: called already closed and NullPointerException
 
-第二步，简短描述在做什么事情，大背景是什么。提问表明，同样的脚本，多跑几次，会出现 3 种不同的结果，很奇怪，而脚本本身很简单。
+第二步，简短描述在做什么事情，大背景是什么。示例提问表明，同一个简单的 PyFlink 脚本，多跑几次，会出现 3 种不同的结果，很奇怪。
 
 > I run into an issue where a PyFlink job may end up with 3 very different outcomes, given very slight difference in input. The PyFlink job is simple. It first reads from a csv file, then process the data a bit with a Python UDF that leverages `sklearn.preprocessing.LabelEncoder`.
 
-第三步，做了哪些尝试，分别遇到哪些阻碍。以脚本出现的第 3 种结果为例，提问在附上完整的错误栈之外，还展现出提问者参考了什么资料，但没能解决这个问题。
+第三步，做了哪些尝试，分别遇到哪些阻碍。以示例提问提到的第 3 种结果为例，除了完整的错误栈之外，它还展现出提问者参考了什么资料，但没能解决这个问题。
 
 > The NullPointerException reminds me of [this question](https://stackoverflow.com/questions/67092978/pyflink-vectorized-udf-throws-nullpointerexception), but I have passed the `test_ml_udf.py` to ensure both the input and output types are `pandas.Series` with same length.
 
-第四步，如何快速地复现问题。提问专门创建了一个 GitHub 仓库，让回答方可以快速复现问题，无需任何额外的猜测。
+第四步，如何快速地复现问题。示例提问专门创建了一个 GitHub 仓库，让回答方可以快速复现问题，无需任何额外的猜测。
 
 > I have included all necessary files for reproduction in the [GitHub repo](https://github.com/YikSanChan/pyflink-issue-call-already-closed).
 > To reproduce:
