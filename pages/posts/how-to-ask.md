@@ -1,7 +1,7 @@
 ---
 title: 如何提问
 date: 2021/05/11
-description: 好的回答，源于好的提问。
+description: 好好提问，是优秀工程师的基本素养。
 tag: work-ethic
 author: 陈易生
 ---
