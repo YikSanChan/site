@@ -38,7 +38,7 @@ Thread 允许用户将讨论挪到分支而不打扰主干。不妨把它想象�
 
 而 Email（电子邮件）和 email threads 早在 1973 年的美国[就已出现](https://en.wikipedia.org/wiki/Email)，直到今天仍被大量用于工作讨论场景（包括 Apache 项目的社群讨论），美国的办公 IM 自然要把这个重要且实用的功能保留下来。
 
-这种路径依赖（path dependency）的现象在中美互联网产品的演进上屡见不鲜。美国人早已习惯用信用卡，因此当线上支付还在美国踟蹰的时候，它的浪潮早已席卷全中国；中国企业比美国企业在实时机器学习的应用上[更为激进](https://huyenchip.com/2020/12/27/real-time-machine-learning.html)；这样的例子还有很多。
+这种路径依赖（path dependency）的现象在中美互联网产品的演进上屡见不鲜。例如，美国人早已习惯用信用卡，因此当线上支付还在美国踟蹰的时候，它的浪潮早已席卷全中国。又例如，中国企业比美国企业在实时机器学习的应用上[更为激进](https://huyenchip.com/2020/12/27/real-time-machine-learning.html)。这样的例子还有很多。
 
 ## 总结
 
