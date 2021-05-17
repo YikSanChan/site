@@ -8,7 +8,7 @@ author: 陈易生
 
 # 我 Thread 没了
 
-在回国开始新工作的第一天，我猛地发现——与 Slack 同为办公 IM（Instant Messeging，即时通讯）的钉钉里没有 Thread，取而代之的是 Chat。
+在回国开始新工作的第一天，我猛地发现——与 Slack 同为办公 IM（Instant Messaging，即时通讯）的钉钉里没有 Thread，取而代之的是 Chat。
 
 ## Thread
 
