@@ -114,6 +114,20 @@ The post compares RonDB vs. Redis from 3 perspectives.
 
 My two-cents: it is always good to know more options, but I believe Redis can serve my use case very well for a very long period.
 
+### Maintaining Machine Learning Model Accuracy Through Monitoring
+
+[Link](https://doordash.engineering/2021/05/20/monitor-machine-learning-model-drift/) by Swaroop Chitlur and Kornel Csernai at DoorDash, 2021/05.
+
+Model predictions tend to deviate from the expected distribution over time, due to the data pattern change. To overcome this, DoorDash builds integrity and autopilot into their feature store in the following steps:
+
+1. Log model prediction (sent_at : timestamp, prediction_id : string, predictor_name : string, model_id : string, features : key-value pairs, prediction_result : numerical, default_values_used : set of feature names).
+1. Collect them in data warehouse.
+1. Query the data warehouse and emit the statistical values (avg, stddev, min, max, and approx_percentile etc) as Prometheus metrics.
+1. Visualize the metrics in Grafana dashboard.
+1. Alert.
+
+My two-cents: When it comes to monitoring, good-old software engineering serves ML well.
+
 ### The Feature Store for AI
 
 [Link](https://medium.com/swlh/the-feature-store-for-ai-45dea7922063). By Chang She at Tubi, 2020/12.
