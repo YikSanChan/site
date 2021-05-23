@@ -19,6 +19,7 @@ ML 算法落地难，几乎是每一个智能驱动的公司都要面临的挑�
 - [Michelangelo - Uber 机器学习平台概述](./uber-michelangelo-overview)
 - [特征平台需求层次理论](./feature-stores-a-hierarchy-of-needs)
 - [PyML = Uber Michelangelo + Python](./uber-michelangelo-pyml)
+- [DoorDash 预测服务实践](./doordash-prediction-service)
 
 欢迎大家讨论、交流，对我们团队感兴趣的还可以看看我们的[求贤贴](./join-us) 😁。
 
