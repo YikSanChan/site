@@ -3,7 +3,7 @@ const YEAR = new Date().getFullYear()
 export default {
   postFooter: (
     <p>
-      If you want to give any feedback on this post, please contact me via&nbsp;
+      Feedback is a gift! Please send your feedback via&nbsp;
       <strong>
         <a href="mailto:evan.chanyiksan@gmail.com">email</a>
       </strong>
