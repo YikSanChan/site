@@ -10,7 +10,7 @@ author: 陈易生
 
 ## 前言
 
-本文是[「算法工程化实践选读」](./mlsys-we-love)系列的第 4 篇，选读来自 DoorDash 的技术博客 [Meet Sibyl – DoorDash’s New Prediction Service – Learn about its Ideation, Implementation and Rollout](https://doordash.engineering/2020/06/29/doordashs-new-prediction-service/) [1]。它介绍了预测服务 Sibyl（希腊神话中著名的女先知）的架构和发布过程。
+本文是[「算法工程化实践选读」](./mlsys-we-love)系列的第 4 篇，选读来自 DoorDash 在 2020 年 6 月发布的技术博客 [Meet Sibyl – DoorDash’s New Prediction Service – Learn about its Ideation, Implementation and Rollout](https://doordash.engineering/2020/06/29/doordashs-new-prediction-service/) [1]。它介绍了预测服务 Sibyl（希腊神话中著名的女先知）的架构和发布过程。
 
 ## 架构
 
@@ -20,7 +20,7 @@ author: 陈易生
 
 ![high-level-flow](/images/doordash-prediction-service/high-level-flow.jpeg)
 
-除了从模型仓库（Model Store）和特征平台（Feature Store）分别获取模型和特征，预测服务还将预测日志（Prediction Logs）写入 Snowflake 数仓，用于模型监控，参考 DoorDash 介绍如何进行模型监控的技术博客 [Maintaining Machine Learning Model Accuracy Through Monitoring](https://doordash.engineering/2021/05/20/monitor-machine-learning-model-drift/)。
+除了从模型仓库（Model Store）和特征平台（Feature Store）分别获取模型和特征，预测服务还将预测日志（Prediction Logs）写入 Snowflake 数仓，用于模型监控，参考 DoorDash 介绍如何进行模型监控的技术博客 [Maintaining Machine Learning Model Accuracy Through Monitoring](https://doordash.engineering/2021/05/20/monitor-machine-learning-model-drift/) [2]。
 
 此外，预测服务还将模型推理涉及的复杂计算交给 Model Evaluator 这个单独的模块去做。为了优化推理速度，Sibyl 将模型用原生格式存储，并通过 C++ 调用 LightGBM 和 Pytorch 的预测。
 
@@ -45,9 +45,12 @@ Sibyl 选择了 DoorDash App 的「搜索」作为切入点。当时的搜索服
 
 ## 总结
 
-将所有预测请求的处理集中在一个预测服务的做法，大大简化了架构，使得每个模型无需一个单独的预测组件，但这也对集中的预测服务的可用性提出了特别高的要求。总的来看，利大于弊，团队需要好好克服挑战。
+将所有预测请求的处理集中在一个预测服务的做法，大大简化了架构，使得无需为每个模型单独实现一个预测服务；但这也对集中的预测服务的可用性提出了特别高的要求。总的来看，利大于弊，团队需要克服技术上的挑战，收获先进架构带来的效率提升。
 
-此外，我有几个疑问：Sibyl 如何处理复杂推理？是否需要在 Model Evaluator 引入预计算？如果引入预计算，预计算部分的架构是怎么样的？
+此外，我有几个疑问：
+
+- 复杂推理的耗时可能较长，Sibyl 是如何处理这种情况，是否需要在 Model Evaluator 引入预计算？
+- 如果引入预计算，预计算部分的架构是怎么样的？
 
 ## 参考文献
 
