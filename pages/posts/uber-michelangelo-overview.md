@@ -1,7 +1,7 @@
 ---
 title: Uber 机器学习平台实践
 date: 2021/04/11
-description: Uber 展示了一个机器学习平台应有的全貌。
+description: Uber Michelangelo 展示了一个机器学习平台应有的全貌。
 tag: ml-sys, notes
 author: 陈易生
 ---
