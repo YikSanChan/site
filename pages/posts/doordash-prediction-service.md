@@ -1,7 +1,7 @@
 ---
 title: DoorDash 预测服务实践
 date: 2021/05/23
-description: DoorDash 如何设计和推广他们的预测服务。
+description: DoorDash 如何设计和推广他们的预测服务？
 tag: ml-sys
 author: 陈易生
 ---
