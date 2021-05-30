@@ -8,9 +8,13 @@ author: 陈易生
 
 # 特征平台需求层次理论
 
-**译者的话**
+## 前言
 
-我最近阅读了很多关于特征平台的文章，但总有「一叶障目，不见泰山」之感，亟需一个简单的思考框架。有幸读到 [Eugene Yan](https://twitter.com/eugeneyan) 的文章 [Feature Stores - A Hierarchy of Needs](https://eugeneyan.com/writing/feature-stores)，深感这是一篇优秀的业界实践读后感，提供了思考特征平台实践的简单框架，非常适合有相关 context 的朋友阅读。我在征得 Eugene 的同意后，全文翻译，以飨中文读者。
+本文是[「算法工程化实践选读」](./mlsys-we-love)系列的第 2 篇，翻译 [Eugene Yan](https://twitter.com/eugeneyan) 的技术博客 [Feature Stores - A Hierarchy of Needs](https://eugeneyan.com/writing/feature-stores/) [1]。
+
+出于开发伴鱼特征平台的需要，我最近阅读了很多关于特征平台的实践文章，但总有「一叶障目，不见泰山」之感——每个公司的算法工程化现状不尽相同，导致解决方案的侧重点不同，在架构上的区别也很大。正如我的前同事佘昶在他 2019 年的一篇文章中，到位地总结：我们缺乏一个**系统性**地思考特征平台的框架。[2]
+
+幸运的是，选读的博客正好提供了这样一个思考框架，并将这个思考框架用于分析当前的各个特征平台上。我在征得 Eugene 的同意后，全文翻译，以飨中文读者。以下是译文。
 
 ---
 
@@ -317,8 +321,12 @@ Airbnb 发现数据回填成为数据科学家迭代模型实验的瓶颈。因�
 
 想开始搭建特征平台吗？[Feast](https://github.com/feast-dev/feast) 是个不错的选择。它满足了访问和服务的需求，并提供了一致的接口，让训练和服务可以使用相似的代码。最棒的一点是，它是开源（免费）的。不妨告诉我进展如何！
 
+---
+
 ## 参考文献
 
-见[原文](https://eugeneyan.com/writing/feature-stores/#references)。
+[1] Feature Stores - A Hierarchy of Needs. https://eugeneyan.com/writing/feature-stores/
+
+[2] Rethinking Feature Stores. https://medium.com/data-for-ai/rethinking-feature-stores-74963c2596f0
 
 ---
