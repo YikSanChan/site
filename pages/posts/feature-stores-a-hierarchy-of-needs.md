@@ -10,7 +10,7 @@ author: 陈易生
 
 ## 前言
 
-本文是[「算法工程化实践选读」](./mlsys-we-love)系列的第 2 篇，翻译 [Eugene Yan](https://twitter.com/eugeneyan) 的技术博客 [Feature Stores - A Hierarchy of Needs](https://eugeneyan.com/writing/feature-stores/) [1]。
+本文是[「算法工程化实践选读」](./mlsys-we-love)系列的第 1 篇，翻译 [Eugene Yan](https://twitter.com/eugeneyan) 的技术博客 [Feature Stores - A Hierarchy of Needs](https://eugeneyan.com/writing/feature-stores/) [1]。
 
 出于开发伴鱼特征平台的需要，我最近阅读了很多关于特征平台的实践文章，但总有「一叶障目，不见泰山」之感——每个公司的算法工程化现状不尽相同，导致解决方案的侧重点不同，在架构上的区别也很大。正如我的前同事佘昶在他 2019 年的一篇文章中，到位地总结：我们缺乏一个**系统性**地思考特征平台的框架。[2]
 

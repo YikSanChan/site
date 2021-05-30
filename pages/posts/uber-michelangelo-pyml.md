@@ -1,12 +1,12 @@
 ---
-title: PyML = Uber Michelangelo + Python
+title: Uber 机器学习平台的高速迭代实践
 date: 2021/04/17
 description: 是要高性能，还是高速迭代？PyML 说，我全都要。
 tag: ml-sys, notes
 author: 陈易生
 ---
 
-# PyML = Uber Michelangelo + Python
+# Uber 机器学习平台的高速迭代实践
 
 ## 前言
 

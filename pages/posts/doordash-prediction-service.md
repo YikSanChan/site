@@ -54,8 +54,8 @@ Sibyl 选择了 DoorDash App 的「搜索」作为切入点。当时的搜索服
 
 ## 参考文献
 
-[1] Sibyl – DoorDash’s new prediction service. https://doordash.engineering/2020/06/29/doordashs-new-prediction-service/
+[1] Meet Sibyl – DoorDash’s New Prediction Service – Learn about its Ideation, Implementation and Rollout. https://doordash.engineering/2020/06/29/doordashs-new-prediction-service/
 
-[2] How DoorDash monitor their models. https://doordash.engineering/2021/05/20/monitor-machine-learning-model-drift/
+[2] Maintaining Machine Learning Model Accuracy Through Monitoring. https://doordash.engineering/2021/05/20/monitor-machine-learning-model-drift/
 
 ---
