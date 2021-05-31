@@ -37,11 +37,13 @@ author: 陈易生
 
 ## 发布过程
 
-Sibyl 选择了 DoorDash App 的「搜索」作为切入点。当时的搜索服务包含了一个自建的排序服务，服务承载了不小的流量。Sibyl 团队选择的做法是，每当 app 向搜索服务发送请求，它会同时向 Sibyl 发送一个请求，但不期待响应，称为影子请求。这种做法能验证 Sibyl 是否能返回正确的预测结果，并能处理这么高流量的请求。最终，Sibyl 能处理的 QPS 达到 10 万级别。下一步是不是该在生产环境中用 Sibyl 来取代搜索服务的排序部分了？
+Sibyl 选择了 DoorDash App 的「搜索」作为切入点。当时，搜索服务遇到的问题是，内置的排序服务占用了搜索服务大量的 RAM 和 CPU，排序模型的进一步迭代非常受限。
+
+Sibyl 团队选择的做法是，每当 app 向搜索服务发送请求，它会同时向 Sibyl 发送一个请求，但不期待响应，称为影子请求。这种做法能验证 Sibyl 是否能返回正确的预测结果，并能处理这么高流量的请求。最终，Sibyl 能处理的 QPS 达到 10 万级别。下一步是不是该在生产环境中用 Sibyl 来取代搜索服务的排序部分了？
 
 不是。原因在于搜索服务对延迟的要求很严格，且把搜索有关的特征全部迁移到 Sibyl 对接的特征平台也需要时间。于是 Sibyl 团队选择了流量和延迟性要求都更低的「诈骗检测」和「骑手支付」，作为最早在生产环境上切换到 Sibyl 的模型。结果不错，预测延迟降低了 3 倍。
 
-此后，绝大多数模型都完成了向 Sibyl 的迁移。
+此后，绝大多数模型都完成了向 Sibyl 的迁移，包括「搜索」。[这篇文章](https://doordash.engineering/2020/10/01/integrating-a-scoring-framework-into-a-prediction-service/)介绍了搜索服务接入 Sibyl 的细节。[3]
 
 ## 总结
 
@@ -57,5 +59,7 @@ Sibyl 选择了 DoorDash App 的「搜索」作为切入点。当时的搜索服
 [1] Meet Sibyl – DoorDash’s New Prediction Service – Learn about its Ideation, Implementation and Rollout. https://doordash.engineering/2020/06/29/doordashs-new-prediction-service/
 
 [2] Maintaining Machine Learning Model Accuracy Through Monitoring. https://doordash.engineering/2021/05/20/monitor-machine-learning-model-drift/
+
+[3] Integrating a Search Ranking Model into a Prediction Service. https://doordash.engineering/2020/10/01/integrating-a-scoring-framework-into-a-prediction-service/
 
 ---
