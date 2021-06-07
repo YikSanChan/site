@@ -151,7 +151,7 @@ Uber 的 Palette 采取了类似的双存储设计。离线存储（Hive）保�
 
 （图注：创建批特征（左边）和实时特征（右边），并在存储间同步。[来源](https://www.infoq.com/presentations/michelangelo-palette-uber/)）
 
-DoorDash 搭建了[超大规模的特征平台](https://www.infoq.com/presentations/michelangelo-palette-uber/)，将特征服务做到极致，满足以下需求：
+DoorDash 搭建了[超大规模的特征平台](https://doordash.engineering/2020/11/19/building-a-gigascale-ml-feature-store-with-redis/)，将特征服务做到极致，满足以下需求：
 
 - 支持在可持久、可伸缩的存储中保存十亿级别条数的特征。DoorDash 有百万级别的特征实体（entity）和十亿级别的特征。
 - 支持百万级别 QPS（Queries per second）。特征平台有多个使用场景，其中包括餐厅排序。这一场景使用大量特征，每秒做出超过一百万次预测。综合来看，特征平台的 QPS 超过一千万。
