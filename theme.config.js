@@ -1,19 +1,6 @@
 const YEAR = new Date().getFullYear()
 
 export default {
-  postFooter: (
-    <p>
-      Feedback is a gift! Please send your feedback via&nbsp;
-      <strong>
-        <a href="mailto:evan.chanyiksan@gmail.com">email</a>
-      </strong>
-      &nbsp;or&nbsp;
-      <strong>
-        <a href="https://twitter.com/yiksanchan">Twitter</a>
-      </strong>
-      .
-    </p>
-  ),
   footer: (
     <small style={{ display: "block", marginTop: "8rem" }}>
       <time>{YEAR}</time> © Yik San Chan. Built with{" "}
@@ -32,4 +19,8 @@ export default {
       />
     </small>
   ),
+  cusdis: {
+    appId: '4701644f-ed94-41d5-9c2b-4a2a630dec30',
+    host: 'https://yiksanchan-cusdis.vercel.app',
+  }
 }
