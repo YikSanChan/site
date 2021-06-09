@@ -10,7 +10,7 @@ author: 陈易生
 
 ## 前言
 
-本文是[「算法工程化实践选读」](/posts/mlsys-we-love)系列的第 2 篇，选读来自 Uber 在 2017 年 9 月发布的技术博客 [Meet Michelangelo: Uber’s Machine Learning Platform](https://eng.uber.com/michelangelo-machine-learning-platform/) [1]。它介绍了机器学习平台 Michelangelo（意大利文艺复兴时期伟大的绘画家、雕塑家、建筑师和诗人）的各个组件的职能，第一次细致地向大家描述了机器学习平台应有的全貌。
+本文是[「算法工程化实践选读」](/posts/mlsys-we-love)系列的第 2 篇，选读来自 Uber 在 2017 年 9 月发布的技术博客 [Meet Michelangelo: Uber’s Machine Learning Platform](https://eng.uber.com/michelangelo-machine-learning-platform/) [1]。它介绍了机器学习平台 Michelangelo（意大利文艺复兴时期伟大的绘画家、雕塑家、建筑师和诗人）的各个模块的职能，第一次细致地向大家描述了机器学习平台应有的全貌。
 
 ## 现状和问题
 
@@ -22,7 +22,7 @@ Uber 有众多业务线，其中包含许多使用 ML 的场景，例如：共�
 
 ## 数据管理
 
-数据是 ML 中最难的部分。平台的数据管理组件包括特征生成管道和特征仓库。
+数据是 ML 中最难的部分。平台的数据管理模块包括特征生成管道和特征仓库。
 
 特征生成管道（Stream Engine 和 Data Prep Job）经工作流引擎的调度，从 Kafka 流数据源 和 Data Lake 批数据源读取数据，转换成供 ML 模型使用的特征，写入特征仓库（Cassandra Feature Store 和 Hive Feature Store）。一旦特征落库，就可以供在线预测（Realtime Predict Service）、离线训练（Batch Training Job）和离线预测（Batch Predict Job）使用。
 

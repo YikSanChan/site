@@ -20,6 +20,7 @@ ML 算法落地难，几乎是每一个智能驱动的公司都要面临的挑�
 - [Uber 机器学习平台实践](/posts/uber-michelangelo-overview)
 - [Uber 机器学习平台的高速迭代实践](/posts/uber-michelangelo-pyml)
 - [DoorDash 预测服务实践](/posts/doordash-prediction-service)
+- [美团机器学习平台实践](/posts/meituan-turing-overview)
 
 欢迎大家讨论、交流，对我们团队感兴趣的还可以看看我的[求贤贴](/posts/join-us) 😁。
 
