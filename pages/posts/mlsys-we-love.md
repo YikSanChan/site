@@ -16,12 +16,12 @@ ML 算法落地难，几乎是每一个智能驱动的公司都要面临的挑�
 
 目前，我的「选读」系列已经包括以下文章：
 
-- [特征平台需求层次理论](./feature-stores-a-hierarchy-of-needs)
-- [Uber 机器学习平台实践](./uber-michelangelo-overview)
-- [Uber 机器学习平台的高速迭代实践](./uber-michelangelo-pyml)
-- [DoorDash 预测服务实践](./doordash-prediction-service)
+- [特征平台需求层次理论](/posts/feature-stores-a-hierarchy-of-needs)
+- [Uber 机器学习平台实践](/posts/uber-michelangelo-overview)
+- [Uber 机器学习平台的高速迭代实践](/posts/uber-michelangelo-pyml)
+- [DoorDash 预测服务实践](/posts/doordash-prediction-service)
 
-欢迎大家讨论、交流，对我们团队感兴趣的还可以看看我的[求贤贴](./join-us) 😁。
+欢迎大家讨论、交流，对我们团队感兴趣的还可以看看我的[求贤贴](/posts/join-us) 😁。
 
 ## 参考文献
 

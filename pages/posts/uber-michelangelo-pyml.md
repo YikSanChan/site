@@ -10,12 +10,12 @@ author: 陈易生
 
 ## 前言
 
-本文是[「算法工程化实践选读」](./mlsys-we-love)系列的第 3 篇，选读来自 Uber 在 2018 年 10 月发布的技术博客 [Michelangelo PyML: Introducing Uber’s Platform for Rapid Python ML Model Development
+本文是[「算法工程化实践选读」](/posts/mlsys-we-love)系列的第 3 篇，选读来自 Uber 在 2018 年 10 月发布的技术博客 [Michelangelo PyML: Introducing Uber’s Platform for Rapid Python ML Model Development
 ](https://eng.uber.com/michelangelo-pyml/) [1]。它介绍了 Uber 机器学习平台（以下简称平台）为了提高基于 Python 的迭代效率，而进行的一个有趣的演进。
 
 ## 性能 vs 迭代效率
 
-我们在 [Uber 机器学习平台实践](./uber-michelangelo-overview)一文中提到，平台早期着重于提高模型训练和预测的性能，而较少考虑迭代效率。
+我们在 [Uber 机器学习平台实践](/posts/uber-michelangelo-overview)一文中提到，平台早期着重于提高模型训练和预测的性能，而较少考虑迭代效率。
 
 因此，对于平台内置支持的模型（XGBoost、GLM、回归等），算法工程师可以很容易地使用平台进行超大规模训练、在线和离线预测。然而，对于平台尚未内置支持的模型，例如最新发表的研究成果（Google BERT 等），则必须等到平台在特征工程、模型训练、模型部署和模型服务等多个环节均支持该模型，才能开始模型的线上评估。
 
