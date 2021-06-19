@@ -1,6 +1,7 @@
 const YEAR = new Date().getFullYear()
 
 export default {
+  readMore: null,
   postFooter: (
     <p>
       Feedback is a gift! Please send your feedback via&nbsp;
