@@ -1,16 +1,20 @@
 ---
 title: 为什么我更偏好 CLI？
 date: 2021/06/18
-description: 不要温和地走进那个 GUI。
+description: Do not go gentle into that Graphical UI.
 tag: tooling
 author: 陈易生
 ---
 
 # 为什么我更偏好 CLI？
 
+![interstellar](/images/cli-gt-gui/interstellar.jpg)
+
+> Do not go gentle into that good night. -- The poem from Interstellar, originally by Dylan Thomas.
+
 你的系统有一套 API，现在你想搭建 UI 与系统进行交互，你有两个选择：在终端使用的 [CLI](https://en.wikipedia.org/wiki/Command-line_interface)，和在浏览器或桌面使用的 [GUI](https://en.wikipedia.org/wiki/Graphical_user_interface)。你更偏好哪个？
 
-我偏好 CLI，因为 CLI 相比 GUI，有几大优点。
+这取决于系统的类型。对于面向完全非技术人员的系统，GUI 可能更适合；但对于只面向工程师的系统、还处在早期的系统、或是基于成熟开源软件封装形成的系统，CLI 是个更好的选择，因为 CLI 相比 GUI 有几大优势。
 
 ## 更容易自动化
 
@@ -40,14 +44,14 @@ CLI 相比 GUI，在 API 的基础上引入了更少的抽象。更少的抽象�
 - 更容易访问的文档。使用 `--help` 后缀来探索 CLI 的使用文档已经成了惯例，但 GUI 的使用文档只能通过高超的 UI/UX 设计来隐性展现，或者单独部署一个文档网站。
 - 更容易搜索的报错信息。CLI 大可一股脑地把 API 的报错信息原封不动地返回，反正用户在终端的注意力本身就只被这个 CLI 所完全占有。而 GUI 需要考虑到用户的视觉习惯，往往不能直接在用户界面上展现出完整的错误栈。因此，我们可以很容易在网上搜索 CLI 的报错信息，而问 GUI 上的报错信息往往要截图、查网络，更难一些。
 
-## 建议
+## 总结
 
-很多系统都不需要自己搭建 GUI，包括：
+在了解 CLI 的优势后，我们一起回顾文章开头提到的几类更适合 CLI 的系统。 
 
-- 只面向工程师的系统。~~工程师不需要 GUI。~~
-- 还处在早期的，需求和 API 都变化频繁的系统。GUI 需要随着需求和 API 的变化，结果就是大家都累了。
-- 自带 GUI 的开源软件，和基于这类开源软件简单封装或二次开发形成的系统。直接用现成的 GUI 就行，性能和维护都有保障，就没必要自己开发了。系统与系统间 GUI 的一致性不是一个很重要的因素。
+- 只面向工程师的系统。~~因为工程师不需要 GUI。~~
+- 还处在早期的系统。因为早期系统的需求和 API 可能会频繁变化，GUI 因此也常常变化，结果就是协作的多方都被高昂的沟通成本弄得很累。
+- 基于成熟开源软件封装形成的系统。因为成熟开源软件往往自带经过考验的 GUI，性能和维护都有保障，就没必要自己开发了。系统与系统间 GUI 的一致性不是一个很重要的因素。
 
-不要温和地走进那个 GUI。
+Do not go gentle into that Graphical UI.
 
 ---
