@@ -188,7 +188,10 @@ override def snapshotState(context: FunctionSnapshotContext): Unit = {
 }
 ```
 
-`initializeState` 方法初始化 `checkpointedState`，它在函数被创建，或函数从上一个 checkpoint 恢复时被调用。它做的事情很简单：初始化 `checkpointedState`；如果刚从上一个 checkpoint 恢复，用 `checkpointedState` 回填 `bufferedElements`。
+`initializeState` 方法初始化 `checkpointedState` 和 `bufferedElements`。
+
+- 如果函数刚被创建，`checkpointedState` 会被初始化为空状态。
+- 如果函数刚从上一个 checkpoint 恢复，`bufferedElements` 会被 `checkpointedState` 里面的状态回填。
 
 ```scala
 override def initializeState(context: FunctionInitializationContext): Unit = {
