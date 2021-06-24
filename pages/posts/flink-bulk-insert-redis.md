@@ -8,9 +8,13 @@ author: 陈易生
 
 # 我们如何将 Flink 特征管道提速 7 倍
 
+## 前言
+
+本文记录了[伴鱼 AI 平台团队](https://yiksanchan.com/posts/join-us)这周做的一件投入-产出比极高的小事：通过 [Flink 算子状态](https://ci.apache.org/projects/flink/flink-docs-release-1.13/docs/dev/datastream/fault-tolerance/state/#operator-state)和 [Redis Pipelining](https://redis.io/topics/pipelining) 的简单结合，把 [Flink](https://flink.apache.org/) 往 Redis 大规模写入的效率提高了 7 倍。
+
 ## 问题背景
 
-在伴鱼，算法工程师处理好的离线特征存储在 [Hive](https://hive.apache.org/) 表中，伴鱼 AI 基础架构团队维护的 [Flink](https://flink.apache.org/) 特征管道在 [DolphinScheduler](https://dolphinscheduler.apache.org/) 引擎的调度下，定期将 Hive 中的离线特征批量导入基于 [Redis](https://redis.io/) 的在线特征仓库，为在线 ModelServer 提供低延迟的特征访问。由于离线特征的数量非常大，我们希望能优化特征管道对 Redis 的大规模写入，缩短写入的耗时。
+在伴鱼，算法工程师处理好的离线特征存储在 [Hive](https://hive.apache.org/) 表中，伴鱼 AI 平台团队维护的 Flink 特征管道在 [DolphinScheduler](https://dolphinscheduler.apache.org/) 引擎的调度下，定期将 Hive 中的离线特征批量导入基于 [Redis](https://redis.io/) 的在线特征仓库，为在线 ModelServer 提供低延迟的特征访问。由于离线特征的数量非常大，我们希望能优化特征管道对 Redis 的大规模写入，缩短写入的耗时。
 
 ## 实现框架
 
@@ -148,7 +152,7 @@ class BatchRedisSink extends RichSinkFunction[(String, String)] {
 
 逐条写入的问题是显而易见的：对于每一条记录，都要进行一次 Redis 的远程调用，大大降低了吞吐。性能测试验证了这一点：300 万记录竟然需要 1400 秒才插入完成。根据 Redis 服务端的指标，写入 QPS 远远没有达到集群能承受的上限，不难判断瓶颈是在客户端。
 
-提高的办法也很直观。[Redis Pipelining](https://redis.io/topics/pipelining) 在客户端积攒多个命令，再批量发送给服务端，有效减少 Redis 远程调用的数量。
+提高的办法也很直观。Redis Pipelining 在客户端积攒多个命令，再批量发送给服务端，有效减少 Redis 远程调用的数量。
 
 这个方法的前提是，Flink 可以积攒多个命令，即存储状态。
 
@@ -172,7 +176,7 @@ override def invoke(value: (String, Int), context: Context): Unit = {
 }
 ```
 
-如果我们不关心故障恢复，那这个类可以到此为止了。但 `BufferingSink` 不是个随便的 Sink。`BufferingSink` 拓展了 `CheckpointedFunction`，通过 checkpoint 机制确保算子的状态能从故障中恢复。`CheckpointedFunction` 需要实现两个接口：`snapshotState` 和 `initializeState`。
+如果我们不关心故障恢复，那这个类可以到此为止了。但 `BufferingSink` 不是个随便的 Sink。`BufferingSink` 拓展了 `CheckpointedFunction`，通过 [checkpointing](https://ci.apache.org/projects/flink/flink-docs-release-1.13/docs/dev/datastream/fault-tolerance/checkpointing/) 机制会对算子状态进行持久化，确保算子状态能从故障中恢复。`CheckpointedFunction` 需要实现两个接口：`snapshotState` 和 `initializeState`。
 
 `snapshotState` 方法对状态进行快照。具体地，它把原来的 `checkpointedState` 清空，然后把 `bufferedElements` 中的状态全部添加到 `checkpointedState` 中。
 
