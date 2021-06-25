@@ -22,7 +22,7 @@ author: 陈易生
 
 除了从模型仓库（Model Store）和特征平台（Feature Store）分别获取模型和特征，预测服务还将预测日志（Prediction Logs）写入 Snowflake 数仓，用于模型监控，参考 DoorDash 介绍如何进行模型监控的技术博客 [Maintaining Machine Learning Model Accuracy Through Monitoring](https://doordash.engineering/2021/05/20/monitor-machine-learning-model-drift/) [2]。
 
-此外，预测服务还将模型推理涉及的复杂计算交给 Model Evaluator 这个单独的模块去做。为了优化推理速度，Sibyl 将模型用原生格式存储，并通过 C++ 调用 LightGBM 和 Pytorch 的预测。
+此外，预测服务还将模型推理涉及的复杂计算交给 Model Evaluator 这个模块去做。为了优化推理速度，Model Evaluator 将模型用原生格式存储，并通过 C++ 调用 LightGBM 和 PyTorch 的预测。在 Sibyl V1 中，Model Evaluator 被包含在 Sibyl 内，但在后续版本中，这个模块会独立成一个服务。
 
 基于这样一个架构，一个 Sibyl 预测请求的生命周期如下：
 
