@@ -10,11 +10,11 @@ author: 陈易生
 
 ## 前言
 
-本文记录了[伴鱼 AI 平台团队](https://yiksanchan.com/posts/join-us)这周做的一件投入-产出比极高的小事：通过 [Flink 算子状态](https://ci.apache.org/projects/flink/flink-docs-release-1.13/docs/dev/datastream/fault-tolerance/state/#operator-state)和 [Redis Pipelining](https://redis.io/topics/pipelining) 的简单结合，把 [Flink](https://flink.apache.org/) 往 Redis 大规模写入的效率提高了 7 倍。
+本文记录了[伴鱼 AI 平台团队](https://yiksanchan.com/posts/join-us)这周做的一件投入-产出比极高的小事：通过 [Flink 算子状态](https://ci.apache.org/projects/flink/flink-docs-release-1.13/docs/dev/datastream/fault-tolerance/state/#operator-state)和 [Redis Pipelining](https://redis.io/topics/pipelining) 的简单结合，把 [Flink](https://flink.apache.org/) 往 [Redis](https://redis.io/) 大规模写入的效率提高了 7 倍。
 
 ## 问题背景
 
-在伴鱼，算法工程师处理好的离线特征存储在 [Hive](https://hive.apache.org/) 表中，伴鱼 AI 平台团队维护的 Flink 特征管道在 [DolphinScheduler](https://dolphinscheduler.apache.org/) 引擎的调度下，定期将 Hive 中的离线特征批量导入基于 [Redis](https://redis.io/) 的在线特征仓库，为在线 ModelServer 提供低延迟的特征访问。由于离线特征的数量非常大，我们希望能优化特征管道对 Redis 的大规模写入，缩短写入的耗时。
+在伴鱼，算法工程师处理好的离线特征存储在 [Hive](https://hive.apache.org/) 表中，伴鱼 AI 平台团队维护的 Flink 特征管道在 [DolphinScheduler](https://dolphinscheduler.apache.org/) 引擎的调度下，定期将 Hive 中的离线特征批量导入基于 Redis 的在线特征仓库，为在线 ModelServer 提供低延迟的特征访问。由于离线特征的数量非常大，我们希望能优化特征管道对 Redis 的大规模写入，缩短写入的耗时。
 
 ## 实现框架
 
