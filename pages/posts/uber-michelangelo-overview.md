@@ -10,7 +10,7 @@ author: 陈易生
 
 ## 前言
 
-本文是[「算法工程化实践选读」](/posts/mlsys-we-love)系列的第 2 篇，选读来自 Uber 在 2017 年 9 月发布的技术博客 [Meet Michelangelo: Uber’s Machine Learning Platform](https://eng.uber.com/michelangelo-machine-learning-platform/) [1]。它介绍了机器学习平台 Michelangelo（意大利文艺复兴时期伟大的绘画家、雕塑家、建筑师和诗人）的各个组件的职能，第一次细致地向大家描述了机器学习平台应有的全貌。
+本文是[「算法工程化实践选读」](/posts/mlsys-we-love)系列的第 2 篇，选读 Uber 在 2017 年 9 月发布的技术博客 [Meet Michelangelo: Uber’s Machine Learning Platform](https://eng.uber.com/michelangelo-machine-learning-platform/) [1]。它介绍了机器学习平台 Michelangelo（意大利文艺复兴时期伟大的绘画家、雕塑家、建筑师和诗人）的各个组件的职能，第一次细致地向大家描述了机器学习平台应有的全貌。
 
 ## 现状和问题
 

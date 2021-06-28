@@ -10,7 +10,7 @@ author: 陈易生
 
 ## 前言
 
-本文是[「算法工程化实践选读」](/posts/mlsys-we-love)系列的第 3 篇，选读来自 Uber 在 2018 年 10 月发布的技术博客 [Michelangelo PyML: Introducing Uber’s Platform for Rapid Python ML Model Development
+本文是[「算法工程化实践选读」](/posts/mlsys-we-love)系列的第 3 篇，选读 Uber 在 2018 年 10 月发布的技术博客 [Michelangelo PyML: Introducing Uber’s Platform for Rapid Python ML Model Development
 ](https://eng.uber.com/michelangelo-pyml/) [1]。它介绍了 Uber 机器学习平台（以下简称平台）为了提高基于 Python 的迭代效率，而进行的一个有趣的演进。
 
 ## 性能 vs 迭代效率
