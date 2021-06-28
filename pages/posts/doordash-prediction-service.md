@@ -10,7 +10,7 @@ author: 陈易生
 
 ## 前言
 
-本文是[「算法工程化实践选读」](./mlsys-we-love)系列的第 4 篇，选读来自 DoorDash 在 2020 年 6 月发布的技术博客 [Meet Sibyl – DoorDash’s New Prediction Service – Learn about its Ideation, Implementation and Rollout](https://doordash.engineering/2020/06/29/doordashs-new-prediction-service/) [1]。它介绍了预测服务 Sibyl（希腊神话中著名的女先知）的架构和发布过程。
+本文是[「算法工程化实践选读」](./mlsys-we-love)系列的第 4 篇，选读来自 DoorDash 在 2020 年 6 月发布的技术博客 [Meet Sibyl – DoorDash’s New Prediction Service – Learn about its Ideation, Implementation and Rollout](https://doordash.engineering/2020/06/29/doordashs-new-prediction-service/)。它介绍了预测服务 Sibyl（希腊神话中著名的女先知）的架构和发布过程。
 
 ## 架构
 
@@ -20,9 +20,13 @@ author: 陈易生
 
 ![high-level-flow](/images/doordash-prediction-service/high-level-flow.jpeg)
 
-除了从模型仓库（Model Store）和特征平台（Feature Store）分别获取模型和特征，预测服务还将预测日志（Prediction Logs）写入 Snowflake 数仓，用于模型监控，参考 DoorDash 介绍如何进行模型监控的技术博客 [Maintaining Machine Learning Model Accuracy Through Monitoring](https://doordash.engineering/2021/05/20/monitor-machine-learning-model-drift/) [2]。
+让我们逐个模块来看：
 
-此外，预测服务还将模型推理涉及的复杂计算交给 Model Evaluator 这个模块去做。为了优化推理速度，Model Evaluator 将模型用原生格式存储，并通过 C++ 调用 LightGBM 和 PyTorch 的预测。在 Sibyl V1 中，Model Evaluator 被包含在 Sibyl 内，但在后续版本中，这个模块会独立成一个服务。
+- 预测服务（Prediction Service）管理预测请求的整个生命周期。
+- 模型仓库（Model Store）负责模型的存储。模型以原生格式存储，以便优化预测的性能。
+- 特征平台（Feature Store）提供特征。
+- Model Evaluator 负责模型推理。它通过 [JNI](https://docs.oracle.com/javase/7/docs/technotes/guides/jni/spec/intro.html) 调用由 C++ 实现的 LightGBM 和 PyTorch 的预测请求，[优化预测性能](https://pytorch.org/tutorials/advanced/cpp_export.html)。在 Sibyl V1 中，Model Evaluator 被包含在 Sibyl 内，但在后续版本中，这个模块会独立成一个服务。
+- Snowflake 数据湖存储预测服务产生的预测日志（Prediction Logs），用于后续模型监控，参考[这篇博客](https://doordash.engineering/2021/05/20/monitor-machine-learning-model-drift/)。
 
 基于这样一个架构，一个 Sibyl 预测请求的生命周期如下：
 
@@ -43,7 +47,7 @@ Sibyl 团队选择的做法是，每当 app 向搜索服务发送请求，它会
 
 不是。原因在于搜索服务对延迟的要求很严格，且把搜索有关的特征全部迁移到 Sibyl 对接的特征平台也需要时间。于是 Sibyl 团队选择了流量和延迟性要求都更低的「诈骗检测」和「骑手支付」，作为最早在生产环境上切换到 Sibyl 的模型。结果不错，预测延迟降低了 3 倍。
 
-此后，绝大多数模型都完成了向 Sibyl 的迁移，包括「搜索」。[这篇文章](https://doordash.engineering/2020/10/01/integrating-a-scoring-framework-into-a-prediction-service/)介绍了搜索服务接入 Sibyl 的细节。[3]
+此后，绝大多数模型都完成了向 Sibyl 的迁移，包括「搜索」。[这篇文章](https://doordash.engineering/2020/10/01/integrating-a-scoring-framework-into-a-prediction-service/)介绍了搜索服务接入 Sibyl 的细节。
 
 ## 总结
 
@@ -53,13 +57,5 @@ Sibyl 团队选择的做法是，每当 app 向搜索服务发送请求，它会
 
 - 复杂推理的耗时可能较长，Sibyl 是如何处理这种情况，是否需要在 Model Evaluator 引入预计算？
 - 如果引入预计算，预计算部分的架构是怎么样的？
-
-## 参考文献
-
-[1] Meet Sibyl – DoorDash’s New Prediction Service – Learn about its Ideation, Implementation and Rollout. https://doordash.engineering/2020/06/29/doordashs-new-prediction-service/
-
-[2] Maintaining Machine Learning Model Accuracy Through Monitoring. https://doordash.engineering/2021/05/20/monitor-machine-learning-model-drift/
-
-[3] Integrating a Search Ranking Model into a Prediction Service. https://doordash.engineering/2020/10/01/integrating-a-scoring-framework-into-a-prediction-service/
 
 ---
