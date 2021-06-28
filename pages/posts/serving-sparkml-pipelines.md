@@ -1,7 +1,7 @@
 ---
 title: Spark ML 管道在线推理实践
 date: 2021/06/29
-description:
+description: MLeap 和 Uber 如何提高 Spark ML 管道在线推理的效率？
 tag: ml-sys, notes
 author: 陈易生
 ---
