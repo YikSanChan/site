@@ -90,35 +90,35 @@ model.transform(test)
 1. 离线训练。在离线训练环境中，像上一节介绍的那样，用 Spark 实现并训练一个管道，得到 PipelineModel。
 1. 序列化。将 PipelineModel 序列化为 [MLeap Bundle](https://combust.github.io/mleap-docs/core-concepts/mleap-bundles.html)。
 
-```scala
-import ml.combust.bundle.BundleFile
-import ml.combust.mleap.spark.SparkSupport._
-import org.apache.spark.ml.bundle.SparkBundleContext
-import resource._
-implicit val context = SparkBundleContext()
-(for (
-  modelFile <- managed(BundleFile("jar:file:/tmp/spark-logistic-regression-model.zip"))
-) yield {
-  model.writeBundle.save(modelFile)(context)
-}).tried.get
-```
+   ```scala
+   import ml.combust.bundle.BundleFile
+   import ml.combust.mleap.spark.SparkSupport._
+   import org.apache.spark.ml.bundle.SparkBundleContext
+   import resource._
+   implicit val context = SparkBundleContext()
+   (for (
+     modelFile <- managed(BundleFile("jar:file:/tmp/spark-logistic-regression-model.zip"))
+   ) yield {
+     model.writeBundle.save(modelFile)(context)
+   }).tried.get
+   ```
 
 1. 在线推理。在线上服务环境中，依赖 MLeap 运行时，运行这个序列化后的管道，进行低延迟的在线推理。注意，下面的代码不包含 Spark 依赖！
 
-```scala
-// NO SPARK DEPENDENCIES!
-import ml.combust.bundle.BundleFile
-import ml.combust.mleap.runtime.MleapSupport._
-import resource._
-val zipBundleM = (for (bundle <- managed(BundleFile("jar:file:/tmp/spark-logistic-regression-model.zip"))) yield {
-  bundle.loadMleapBundle().get
-}).opt.get
-val mleapModel = zipBundleM.root
-// Prepare test documents, which are unlabeled (id, text) tuples.
-val test = ...
-mleapModel.transform(test)
-// ...
-```
+   ```scala
+   // NO SPARK DEPENDENCIES!
+   import ml.combust.bundle.BundleFile
+   import ml.combust.mleap.runtime.MleapSupport._
+   import resource._
+   val zipBundleM = (for (bundle <- managed(BundleFile("jar:file:/tmp/spark-logistic-regression-model.zip"))) yield {
+     bundle.loadMleapBundle().get
+   }).opt.get
+   val mleapModel = zipBundleM.root
+   // Prepare test documents, which are unlabeled (id, text) tuples.
+   val test = ...
+   mleapModel.transform(test)
+   // ...
+   ```
 
 根据 MLeap 提供的 [benchmark](https://github.com/combust/mleap-docs/blob/master/faq.md#what-is-mleap-runtimes-inference-performance) 结果，在 MLeap 运行时中运行 ML 管道，相比 Spark 运行时，可以获得 10000 倍以上的提速。
 
