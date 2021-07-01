@@ -77,7 +77,7 @@ model.transform(test)
 根据[性能测试](https://github.com/combust/mleap-docs/blob/master/faq.md#why-not-use-a-sparkcontext-with-a-localrelation-dataframe-to-transform)的结果，一次依赖 [Spark Context](https://spark.apache.org/docs/latest/api/java/org/apache/spark/SparkContext.html) 的推理过程的耗时在 100 毫秒左右，距离在线推理通常要求 5 毫秒有很大的距离。Uber Michelangelo 团队在[一篇博客](https://eng.uber.com/michelangelo-machine-learning-model-representation/)中定位了 `PipelineModel` 不适合做在线推理的两个原因：
 
 - 处理请求的速度太慢。Spark 在设计时并没有针对在线推理的场景做优化，而是着重于离线的批处理。
-- 加载模型的速度太慢。Spark 的很多操作依赖于重量级、分布式的 Spark Context。
+- 加载模型的速度太慢。Spark 的很多操作依赖于重量级、分布式的 Spark Context。Spark Context 是为处理大规模、分布式的数据而设计，这使得它在处理少量、位于本地的数据时，反而有「杀鸡用牛刀」的感觉，额外开销很高。
 
 下文着重比较将 Spark ML 管道用于在线推理的两个尝试。
 
