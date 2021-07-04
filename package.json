@@ -12,8 +12,8 @@
   "dependencies": {
     "gray-matter": "^4.0.2",
     "next": "^10.0.0",
-    "nextra": "^0.2.6",
-    "nextra-theme-blog": "^0.1.2",
+    "nextra": "^0.4.3",
+    "nextra-theme-blog": "^0.1.4",
     "prism-react-renderer": "^1.1.1",
     "prismjs": "^1.22.0",
     "react": "^16.13.1",
