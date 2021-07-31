@@ -1,7 +1,7 @@
 ---
 title: Run ML batch inference with PyFlink
 date: 2021/07/31
-description:
+description: Here's how!
 tag: flink
 author: Yik San Chan
 ---
