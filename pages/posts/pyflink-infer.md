@@ -276,6 +276,8 @@ predict = udf(Predict(), result_type=DataTypes.DOUBLE(), func_type="pandas")
 t_env.create_temporary_function("predict", predict)
 ```
 
+Find the complete `pyflink_infer.py` file [here](https://github.com/YikSanChan/pyflink-lightgbm-batch-inference/blob/master/pyflink_infer.py).
+
 Step 5. Spin up a local Flink cluster. If it goes well, you should be able to browse the Flink Web UI at http://localhost:8081/.
 
 ```sh
