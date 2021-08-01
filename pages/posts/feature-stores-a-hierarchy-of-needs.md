@@ -8,6 +8,8 @@ author: 陈易生
 
 # 特征平台需求层次理论
 
+> 本文同步发表在 [InfoQ](https://www.infoq.cn/article/83sxswlgqvejae7f9vut) 和[伴鱼技术博客](https://tech.ipalfish.com/blog/2021/05/31/feature-stores-a-hierarchy-of-needs/)。
+
 ## 前言
 
 本文是[「算法工程化实践选读」](/posts/mlsys-we-love)系列的第 1 篇，翻译 [Eugene Yan](https://twitter.com/eugeneyan) 的技术博客 [Feature Stores - A Hierarchy of Needs](https://eugeneyan.com/writing/feature-stores/) [1]。

@@ -8,6 +8,8 @@ author: 陈易生
 
 # DoorDash 预测服务实践
 
+> 本文同步发表在[伴鱼技术博客](https://tech.ipalfish.com/blog/2021/05/31/doordash-prediction-service/)。
+
 ## 前言
 
 本文是[「算法工程化实践选读」](./mlsys-we-love)系列的第 4 篇，选读 DoorDash 在 2020 年 6 月发布的技术博客 [Meet Sibyl – DoorDash’s New Prediction Service – Learn about its Ideation, Implementation and Rollout](https://doordash.engineering/2020/06/29/doordashs-new-prediction-service/)。它介绍了预测服务 Sibyl（希腊神话中著名的女先知）的架构和发布过程。

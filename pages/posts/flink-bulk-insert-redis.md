@@ -8,6 +8,8 @@ author: 陈易生
 
 # 我们如何将 Flink 特征管道提速 7 倍
 
+> 本文同步发表在[伴鱼技术博客](https://tech.ipalfish.com/blog/2021/06/24/flink-bulk-insert-redis/)。
+
 ## 前言
 
 本文记录了[伴鱼 AI 平台团队](https://yiksanchan.com/posts/join-us)这周做的一件投入-产出比极高的小事：通过 [Flink 算子状态](https://ci.apache.org/projects/flink/flink-docs-release-1.13/docs/dev/datastream/fault-tolerance/state/#operator-state)和 [Redis Pipelining](https://redis.io/topics/pipelining) 的简单结合，把 [Flink](https://flink.apache.org/) 往 [Redis](https://redis.io/) 大规模写入的效率提高了 7 倍。

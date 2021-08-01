@@ -8,6 +8,8 @@ author: 陈易生
 
 # 算法工程化实践选读
 
+> 本文同步发表在[伴鱼技术博客](https://tech.ipalfish.com/blog/2021/05/31/mlsys-we-love/)。
+
 什么是算法工程化？一图胜千言 [1] ——算法工程化关注如何搭建 ML 基础架构（白色和灰色的模块），使得 ML 算法（蓝色模块）落地，发挥作用。
 
 ![mlsys](/images/mlsys-we-love/mlsys.svg)
