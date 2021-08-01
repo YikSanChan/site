@@ -8,6 +8,8 @@ author: 陈易生
 
 # Uber 机器学习平台的高速迭代实践
 
+> 本文同步发表在[伴鱼技术博客](https://tech.ipalfish.com/blog/2021/05/31/uber-michelangelo-pyml/)。
+
 ## 前言
 
 本文是[「算法工程化实践选读」](/posts/mlsys-we-love)系列的第 3 篇，选读 Uber 在 2018 年 10 月发布的技术博客 [Michelangelo PyML: Introducing Uber’s Platform for Rapid Python ML Model Development
