@@ -8,7 +8,7 @@ author: 陈易生
 
 # 机器学习特征系统在伴鱼的演进
 
-> 本文同步发表在[伴鱼技术博客](https://tech.ipalfish.com/blog/2021/07/30/palfish-feature-system/)。
+> 本文同步发表在 [InfoQ](https://www.infoq.cn/article/Fr98K9tR5VQPdpj0hTyh) 和[伴鱼技术博客](https://tech.ipalfish.com/blog/2021/07/30/palfish-feature-system/)。
 
 ## 前言
 
