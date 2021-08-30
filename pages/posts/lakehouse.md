@@ -55,6 +55,6 @@ Best of both worlds! Here's how:
 
 ## Conclusion
 
-Delta Lake is an implementation of Lakehouse. Go check it out.
+Note that Lakehouse is more of a specification, while Delta Lake is an implementation by Databricks. Go check it out!
 
 ---
