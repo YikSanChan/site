@@ -70,7 +70,94 @@ author: 陈易生
 
 特征源存储从原始数据源加工形成的特征。值得强调的是，它同时还是连接算法工程师和 AI 平台工程师的桥梁。算法工程师只负责实现特征工程的逻辑，将原始数据加工为特征，写入特征源，剩下的事情就交给 AI 平台。平台工程师实现特征注入管道，将特征写入特征仓库，以特征服务的形式对外提供数据访问服务。
 
-特征注入管道将特征从特征源读出，写入特征仓库。由于 Flink 社区缺少对 Redis sink 的原生支持，我们通过拓展 [RichSinkFunction](https://github.com/apache/flink/blob/master/flink-streaming-java/src/main/java/org/apache/flink/streaming/api/functions/sink/RichSinkFunction.java) 简单地实现了 `StreamRedisSink` 和 `BatchRedisSink`，很好地满足我们的需求。其中，`BatchRedisSink` 通过 [Flink Operator State](https://ci.apache.org/projects/flink/flink-docs-release-1.13/docs/dev/datastream/fault-tolerance/state/#using-operator-state) 和 [Redis Pipelining](https://redis.io/topics/pipelining) 的简单结合，参考 Flink 文档中的 `BufferingSink` 实现了批量写入，大幅减少对 Redis Server 的请求量，增大吞吐，将写入效率提升了 7 倍，详情见[博客《我们如何将 Flink 特征管道提速 7 倍》](/posts/flink-bulk-insert-redis)。
+特征注入管道将特征从特征源读出，写入特征仓库。由于 Flink 社区缺少对 Redis sink 的原生支持，我们通过拓展 [RichSinkFunction](https://github.com/apache/flink/blob/master/flink-streaming-java/src/main/java/org/apache/flink/streaming/api/functions/sink/RichSinkFunction.java) 简单地实现了 `StreamRedisSink` 和 `BatchRedisSink`，很好地满足我们的需求。
+
+其中，`BatchRedisSink` 通过 [Flink Operator State](https://ci.apache.org/projects/flink/flink-docs-release-1.13/docs/dev/datastream/fault-tolerance/state/#using-operator-state) 和 [Redis Pipelining](https://redis.io/topics/pipelining) 的简单结合，大量参考 Flink 文档中的 `BufferingSink`，实现了批量写入，大幅减少对 Redis Server 的请求量，增大吞吐，写入效率相比逐条插入[提升了 7 倍](/posts/flink-bulk-insert-redis)。`BatchRedisSink` 的简要实现如下。其中，`flush` 实现了批量写入 Redis 的核心逻辑，`checkpointedState` / `bufferedElements` / `snapshotState` / `initializeState` 实现了使用 Flink 有状态算子管理元素缓存的逻辑。
+
+```scala
+class BatchRedisSink(
+    pipelineBatchSize: Int
+) extends RichSinkFunction[(String, Timestamp, Map[String, String])]
+    with CheckpointedFunction {
+
+  @transient
+  private var checkpointedState
+      : ListState[(String, java.util.Map[String, String])] = _
+
+  private val bufferedElements
+      : ListBuffer[(String, java.util.Map[String, String])] =
+    ListBuffer.empty[(String, java.util.Map[String, String])]
+
+  private var jedisPool: JedisPool = _
+
+  override def invoke(
+      value: (String, Timestamp, Map[String, String]),
+      context: SinkFunction.Context
+  ): Unit = {
+    import scala.collection.JavaConverters._
+
+    val (key, _, featureKVs) = value
+    bufferedElements += (key -> featureKVs.asJava)
+
+    if (bufferedElements.size == pipelineBatchSize) {
+      flush()
+    }
+  }
+
+  private def flush(): Unit = {
+    var jedis: Jedis = null
+    try {
+      jedis = jedisPool.getResource
+      val pipeline = jedis.pipelined()
+      for ((key, hash) <- bufferedElements) {
+        pipeline.hmset(key, hash)
+      }
+      pipeline.sync()
+    } catch { ... } finally { ... }
+    bufferedElements.clear()
+  }
+
+  override def snapshotState(context: FunctionSnapshotContext): Unit = {
+    checkpointedState.clear()
+    for (element <- bufferedElements) {
+      checkpointedState.add(element)
+    }
+  }
+
+  override def initializeState(context: FunctionInitializationContext): Unit = {
+    val descriptor =
+      new ListStateDescriptor[(String, java.util.Map[String, String])](
+        "buffered-elements",
+        TypeInformation.of(
+          new TypeHint[(String, java.util.Map[String, String])]() {}
+        )
+      )
+
+    checkpointedState = context.getOperatorStateStore.getListState(descriptor)
+
+    import scala.collection.JavaConverters._
+
+    if (context.isRestored) {
+      for (element <- checkpointedState.get().asScala) {
+        bufferedElements += element
+      }
+    }
+  }
+
+  override def open(parameters: Configuration): Unit = {
+    try {
+      jedisPool = new JedisPool(...)
+    } catch { ... }
+  }
+
+  override def close(): Unit = {
+    flush()
+    if (jedisPool != null) {
+      jedisPool.close()
+    }
+  }
+}
+```
 
 特征系统 V2 很好地满足了我们提出的设计目的。
 
