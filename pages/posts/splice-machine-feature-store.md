@@ -87,7 +87,7 @@ With both feature and prediction data in one store, feature and model governance
 - Is the model making reasonable prediction?
 - Given a feature, what models are using it?
 
-The list can go on.
+The list can go on. See [the post](https://medium.com/data-for-ai/data-lineage-doesnt-have-to-be-hard-da990d3b5a73) for more details.
 
 ### Other highlights
 
