@@ -36,7 +36,7 @@ Given the downside of the dual-store architecture, Splice Machine goes a differe
 
 While it eliminates the need to sync data, the team runs into a new challenge: how to build a store that serves both low-latency lookups and OLAP queries?
 
-The Splice Machine team just knows, as they have provided HTAP (Hybrid Transactional/Analytical Processing) capabilities in their DB product (also named Splice Machine) to customers since 2017. Now in 2021, they build a feature store highly based on the HTAP DB. Below are some design highlights.
+The Splice Machine team just knows, as they have provided HTAP (Hybrid Transactional/Analytical Processing) capabilities in their [DB product](https://doc.splicemachine.com/) (also named Splice Machine) to customers since 2017. Now in 2021, they build a feature store highly based on the HTAP DB. Below are some design highlights.
 
 ### Cost-based optimizer
 
@@ -83,9 +83,10 @@ According to the schema, each model in the table should expect the same set of f
 
 With both feature and prediction data in one store, feature and model governance have never been easier. Basically, you can answer below questions with simple SQL queries:
 
-- Is a certain feature drifting?
-- Is the model making reasonable prediction?
-- Given a feature, what models are using it?
+- Is a certain feature drifting? Just compare the statistics of the trained features vs. actual features.
+- Is the model making reasonable prediction? Ditto.
+- Given a feature, what models are using it? Check some metadata tables.
+- Want to re-train the model? Training dataset has been collected as prediction tables if we backfill labels properly.
 
 The list can go on. See [the post](https://medium.com/data-for-ai/data-lineage-doesnt-have-to-be-hard-da990d3b5a73) for more details.
 
