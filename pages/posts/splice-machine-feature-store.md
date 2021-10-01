@@ -14,7 +14,7 @@ author: Yik San Chan
 
 A [feature store](https://www.tecton.ai/blog/what-is-a-feature-store/) consists of at least two parts, an online store that serves the low-latency online serving purpose, and an offline store that serves the large-scale offline training or inference goal.
 
-Usually, the online/offline stores are in different data systems. But Splice Machine shows a new option - one HTAP database to rule them all.
+Usually, the online/offline stores are in different data systems. But Splice Machine presents a new option - one HTAP database to rule them all.
 
 ## The popular dual-store architecture
 
@@ -34,9 +34,9 @@ Given the downside of the dual-store architecture, Splice Machine goes a differe
 
 ![single-store architecture](/images/splice-machine-feature-store/single-store.svg)
 
-This eliminates the need to sync data, but the team runs into a new challenge: how to build a store that serves both low-latency lookups and OLAP queries?
+While it eliminates the need to sync data, the team runs into a new challenge: how to build a store that serves both low-latency lookups and OLAP queries?
 
-The answer is the Splice Machine team just knows, as they have provided HTAP (Hybrid Transactional/Analytical Processing) capabilities in their DB product (also named Splice Machine) to customers since 2017. Now in 2021, they build a feature store highly based on the HTAP DB. Here are some design highlights.
+The Splice Machine team just knows, as they have provided HTAP (Hybrid Transactional/Analytical Processing) capabilities in their DB product (also named Splice Machine) to customers since 2017. Now in 2021, they build a feature store highly based on the HTAP DB. Below are some design highlights.
 
 ### Cost-based optimizer
 
