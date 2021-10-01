@@ -8,7 +8,7 @@ author: Yik San Chan
 
 # A single-store feature store from Splice Machine
 
-> If you find it interesting, discuss at [Twitter]()! 
+> If you find it interesting, discuss at [Twitter](https://twitter.com/yiksanchan/status/1443781434850775048)!
 
 ## Introduction
 
