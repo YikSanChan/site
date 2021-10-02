@@ -92,7 +92,7 @@ The list can go on. See [the post](https://medium.com/data-for-ai/data-lineage-d
 
 ### Other highlights
 
-Splice Machine Feature Store also implements [time-travel query (aka point-in-time join) and feature backfill](https://www.tecton.ai/blog/time-travel-in-ml/).
+Splice Machine Feature Store also implements [time-travel query (aka point-in-time join)](https://towardsdatascience.com/point-in-time-correctness-in-real-time-machine-learning-32770f322fb1) and feature backfill.
 
 ## Final thoughts
 
