@@ -8,7 +8,7 @@ author: Yik San Chan
 
 # A single-store feature store from Splice Machine
 
-> If you find it interesting, discuss at [Twitter](https://twitter.com/yiksanchan/status/1443781434850775048)!
+Dual-store architecture is not the only viable option for feature store. You may rely on an HTAP to rull them all.
 
 ## Introduction
 
@@ -110,5 +110,7 @@ I want to thank [Monte Zweben](https://twitter.com/mzweben) and Jack Ploshnick f
 
 [Presentation Video](https://databricks.com/session_na21/unified-mlops-feature-stores-model-deployment),
 [Presentation Slides](https://www.slideshare.net/databricks/unified-mlops-feature-stores-model-deployment).
+
+If you find it interesting, discuss at [Twitter](https://twitter.com/yiksanchan/status/1443781434850775048)!
 
 ---
