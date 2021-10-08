@@ -1,7 +1,7 @@
 ---
 title: Empowering data scientists with a feature store
 date: 2021/10/06
-description: How we build a feature store that allows data scientists to productionize features in hours.
+description: How we build a feature store at PalFish that allows data scientists to productionize ML features in hours, not days.
 tag: ml-sys, flink
 author: Yik San Chan
 ---
