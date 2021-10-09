@@ -18,7 +18,7 @@ Usually, the online/offline stores are in different data systems. But Splice Mac
 
 ## The popular dual-store architecture
 
-Most feature stores today share a similar dual-store architecture: a KV store as the online store, and a data warehouse or data lake as the offline store, as shown below. For example, [Uber](https://eng.uber.com/michelangelo-machine-learning-platform/) picks Cassandra and Hive; [Tecton](https://docs.tecton.ai/v2/architecture_overview.html) picks DynamoDB and Delta Lake; Feast defines the online/offline store [protocol](https://docs.feast.dev/getting-started/architecture-and-components/provider) and allows users to choose/implement whatever store they want.
+Most feature stores today share a similar dual-store architecture: a KV store as the online store, and a data warehouse or data lake as the offline store, as shown below. For example, [Uber](https://eng.uber.com/michelangelo-machine-learning-platform/) picks Cassandra and Hive; [Tecton](https://docs.tecton.ai/v2/architecture_overview.html) picks DynamoDB and S3; Feast defines the online/offline store [protocol](https://docs.feast.dev/getting-started/architecture-and-components/provider) and allows users to choose/implement whatever store they want.
 
 ![dual-store architecture](/images/splice-machine-feature-store/dual-store.svg)
 
