@@ -3,7 +3,14 @@ const YEAR = new Date().getFullYear()
 export default {
   readMore: null,
   postFooter: (
-      <iframe src="https://yiksanchan.substack.com/embed" width="100%" height="200" style={{border: "1px solid #EEE", background: "white"}} frameBorder="0" scrolling="no"></iframe>
+    <iframe
+      src="https://yiksanchan.substack.com/embed"
+      width="100%"
+      height="200"
+      style={{ border: "1px solid #EEE", background: "white" }}
+      frameBorder="0"
+      scrolling="no"
+    ></iframe>
   ),
   footer: (
     <small style={{ display: "block", marginTop: "8rem" }}>
