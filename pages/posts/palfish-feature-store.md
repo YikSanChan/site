@@ -179,6 +179,6 @@ These are what we learn from the upgrade.
 
 **Flink is awesome.** They exercise what I have just described - keep building the tools that users want, and set the quality bar high.
 
-If you find it interesting, discuss it on [Twitter](https://twitter.com/yiksanchan/status/1446350984859451395)!
+Any feedback? Comment on [Hacker News](https://news.ycombinator.com/item?id=28796152) or [Twitter](https://twitter.com/yiksanchan/status/1446350984859451395)!
 
 ---
