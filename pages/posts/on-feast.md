@@ -51,4 +51,6 @@ Feast is great, but it can do better.
 
 Many thanks to the Feast team for their endless effort to build the standard for feature stores, so that I have the luxury to judge. I hope Feast keeps moving the needle, and I highly suggest everyone who is interested in feature stores check out Feast. You will be sure to learn a lot no matter you decide to adopt, buy or build.
 
+Any feedback? Comment on [Twitter](https://twitter.com/yiksanchan/status/1447583560508968970)!
+
 ---
