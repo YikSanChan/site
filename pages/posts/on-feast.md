@@ -1,6 +1,6 @@
 ---
 title: "Feast: a feature store practitioner's perspective"
-date: 2021/10/10
+date: 2021/10/11
 description: What is Feast, why it is great, and what it can do better.
 tag: ml-sys
 author: Yik San Chan
