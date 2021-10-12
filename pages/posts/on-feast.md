@@ -14,9 +14,21 @@ I am building a [feature store](https://feast.dev/blog/what-is-a-feature-store/)
 
 ## What is Feast?
 
-[Feast](https://feast.dev/) is the most starred open-source feature store implementation. [Incubated in Gojek](https://www.gojek.io/blog/feast-bridging-ml-models-and-data) and later [joined Tecton](https://www.tecton.ai/blog/feast-announcement/), Feast is adopted by many teams besides Gojek and Tecton, including [Twitter](https://www.featurestoresummit.com/session/twitters-management-of-ml-features-in-dynamic-environments), [Salesforce](https://www.featurestoresummit.com/session/building-feature-store-for-multi-tenant-and-multi-app-in-salesforce), [Shopify](https://www.applyconf.com/agenda/how-we-contributed-to-scale-feast/), and [Robinhood](https://www.applyconf.com/agenda/how-robinhood-built-a-feature-store-using-feast/).
+[Feast](https://feast.dev/) is the most starred open-source feature store implementation. [Incubated in Gojek](https://www.gojek.io/blog/feast-bridging-ml-models-and-data) and later joined [Tecton](https://www.tecton.ai/blog/feast-announcement/) and [Linux Foundation for AI](https://feast.dev/blog/feast-joins-the-linux-foundation-for-ai-data/), Feast is adopted by many teams besides Gojek and Tecton, including [Twitter](https://www.featurestoresummit.com/session/twitters-management-of-ml-features-in-dynamic-environments), [Salesforce](https://www.featurestoresummit.com/session/building-feature-store-for-multi-tenant-and-multi-app-in-salesforce), [Shopify](https://www.applyconf.com/agenda/how-we-contributed-to-scale-feast/), and [Robinhood](https://www.applyconf.com/agenda/how-robinhood-built-a-feature-store-using-feast/).
 
-Feast keeps moving towards a feature-complete feature store implementation. As of version 0.14, it supports mainstream data sources, but it only supports batch features. The next major move will be to support streaming features, while feature transformation and feature quality monitoring are not planned yet.
+Feast keeps moving towards a feature-complete feature store implementation, and what it can do is best summarized in the below architecture (source: [Feast v0.13 release announcement](https://feast.dev/blog/feast-0-13-adds-on-demand-transforms-feature-servers-and-feature-views-without-entities/)).
+
+![feast architecture](/images/on-feast/feast-architecture.png)
+
+As of v0.14, Feast supports:
+
+- All sorts of mainstream batch data sources, including data warehouses (BigQuery and Redshift), object stores (GCS and S3), files (Parquet), and custom ones.
+- Materialization that syncs data from offline stores to online stores ensuring train-serve consistency.
+- On-demand transformation.
+- Feature serving via both SDK and servers.
+- Point-in-time correct join that builds correct training dataset.
+
+The next major moves include supporting stream data sources and data quality monitoring.
 
 ## Why Feast is great?
 
