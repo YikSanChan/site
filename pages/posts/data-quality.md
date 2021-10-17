@@ -46,3 +46,5 @@ Problems include train-serve skew, feature and label drift, etc.
 ## My take
 
 Data quality in ML is not discussed enough given how fundamental it is to make a model really useful. I cannot wait to see the launch of Galileo, and if you know any other startups working on this problem, please kindly let me know!
+
+---
