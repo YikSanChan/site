@@ -26,7 +26,7 @@ To find such datasets, we could filter by feature redundancy and relevance to la
 
 To curate the datasets, there are at least 2 ways.
 
-- The first approach is called active learning. Basically, it identifies sparse regions of our datasets by leveraging embeddings from pre-trained layers of our models. This helps pick a diverse dataset.
+- The first approach is called active learning. Basically, it identifies sparse regions of our datasets by leveraging embeddings from pre-trained layers of our models. This helps pick a diverse dataset. See [this paper](https://arxiv.org/pdf/1708.00489.pdf).
 - The second approach is to identify decision boundaries and pick data around them. This helps pick datasets that make the model more robust.
 
 ### Identify problems in datasets
@@ -35,7 +35,7 @@ Once we get the datasets, we want to identify problems in them. In this part, At
 
 Dataset problems include regions of model underperformance, robustness across sub-populations, similar and dissimilar examples, noisy data and labels. What we can do to eliminate these problems?
 
-- Segregate noisy data from good data through looking at confidence margin and confidence correlation to the uncertainty of the model across different features. This helps to identify regions of model underperformance and figure out what data to augment to our dataset.
+- Segregate noisy data from good data through looking at confidence margin and confidence correlation to the uncertainty of the model across different features. This helps to identify regions of model underperformance and figure out what data to augment to our dataset. See [this paper](https://arxiv.org/pdf/1911.00068.pdf).
 - Inspect joint distribution between noisy and clean labels, along with observing fractions of samples that are misclassified. This can help detect errors in ground truth labels.
 - Leverage SHAP value.
 
