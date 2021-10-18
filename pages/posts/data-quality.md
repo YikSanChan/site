@@ -1,7 +1,7 @@
 ---
 title: "Fixing models by fixing datasets: A note from Feature Store Summit 2021"
 date: 2021/10/18
-description: Atindriyo at Galileo introduced why data quality challenges are critical to solve in Feature Store Summit 2021.
+description: In Feature Store Summit 2021, Atindriyo introduced what are data quality challenges in ML, and why they are critical.
 tag: notes, mlsys
 author: Yik San Chan
 ---
