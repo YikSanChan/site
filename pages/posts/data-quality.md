@@ -1,12 +1,12 @@
 ---
-title: "Feature Store Summit 2021 Note: Fixing models by fixing datasets"
+title: "Fixing models by fixing datasets: A note from Feature Store Summit 2021"
 date: 2021/10/18
 description: Atindriyo at Galileo introduced why data quality challenges are critical to solve in Feature Store Summit 2021.
 tag: notes, mlsys
 author: Yik San Chan
 ---
 
-# Feature Store Summit 2021 Note: Fixing models by fixing datasets
+# Fixing models by fixing datasets: A note from Feature Store Summit 2021
 
 This article is a curation of a talk given by Atindriyo Sanyal on Feature Store Summit 2021. Atindriyo is the co-founder and president of [Galileo](https://www.rungalileo.io/). He was previously leading Machine Learning Data Quality and Observability efforts for Uber and is the co-architect of the world’s first Feature Store - Michelangelo Palette.
 
