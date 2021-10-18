@@ -12,7 +12,7 @@ This article is a curation of a talk given by Atindriyo Sanyal on Feature Store 
 
 ## Introduction
 
-ML has a simple equation: prediction = model(data). To get better predictions, we need both better models as well as better data. While model architectures are maturing quickly, tools to ensure better data quality, however, hasn't been in place yet. In Atindriyo's talk, he introduced common data quality challenges and how to tackle them.
+ML has a simple equation: `prediction = model(data)`. To get better predictions, we need both better models as well as better data. While model architectures are maturing quickly, tools to ensure better data quality, however, hasn't been in place yet. In Atindriyo's talk, he introduced common data quality challenges and how to tackle them.
 
 ## Data quality challenges
 
