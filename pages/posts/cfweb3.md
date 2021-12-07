@@ -1,7 +1,7 @@
 ---
 title: What does the Web3 Demo App by Cloudflare really do?
 date: 2021/12/06
-description: Play-around and code deep-dive of Cloudflare web3 demo app.
+description: I dug into the Cloudflare web3 demo app, and here is what I found.
 tag: web3
 author: Yik San Chan
 ---
