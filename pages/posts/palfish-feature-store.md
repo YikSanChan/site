@@ -10,7 +10,7 @@ author: Yik San Chan
 
 ## Introduction
 
-PalFish is a Series-C online education company based in China. In Feb 2021, I joined PalFish to bootstrap the ML infrastructure team. At the time, PalFish applied real-time machine learning in many cases, including feeds personalization and courses recommendation, but the infrastructure was still in its infancy.
+PalFish is a Series-C EdTech company based in China. In Feb 2021, I joined PalFish to bootstrap the ML infrastructure team. At the time, PalFish applied real-time machine learning in many cases, including ads personalization and leads scoring, but the infrastructure was still in its infancy.
 
 I talked to many data scientists to figure out the lowest hanging fruits and ended up building a feature store. Back then, there already existed a Feature Store V1 that ships features to production for online inference use. What I found out, though, was the whole engineering team take too much effort to productionize a new feature. Data scientists who own the model are often blocked by both data and product engineering teams to get the features ready.
 
@@ -22,25 +22,28 @@ Feature Store V1 has three parts: feature engineering, online store, and online 
 
 ![v1 architecture](/images/palfish-feature-store/v1-architecture.svg)
 
-Feature engineering consumes data sources (batch and stream), cooks the data into features (aka feature engineering), and writes to the online store. It runs on YARN (not k8s yet 😅) and is implemented as Spark (and Spark Streaming).
+Data engineers develop feature engineering jobs with Spark and deploy them to YARN. They consume data sources (batch and stream), cook the data into features (aka feature engineering), and write features to the online store backed by Redis. We choose Redis because it is popular both inside PalFish and in the outside feature store world (see [DoorDash](https://doordash.engineering/2020/11/19/building-a-gigascale-ml-feature-store-with-redis/) and [Feast](https://docs.feast.dev/feast-on-kubernetes/concepts/stores#online-store)).
 
-The online store allows low-latency access to features. We choose Redis because it is popular both inside PalFish and in the outside feature store world (see [DoorDash](https://doordash.engineering/2020/11/19/building-a-gigascale-ml-feature-store-with-redis/) and [Feast](https://docs.feast.dev/feast-on-kubernetes/concepts/stores#online-store)).
+When data engineers are done, product engineers come. They build gRPC API on top of Redis that allows low-latency access to features data. An API call `GetFeatures(EntityName, FeatureNames)` is mapped to a Redis call `HMGET EntityName FeatureNames[0] ... FeatureNames[N-1]`. Simple.
 
-An online serving provides gRPC API `GetFeatures(EntityName, FeatureNames)` to the outside world, that calls Redis' `HMGET EntityName FeatureNames[0] ... FeatureNames[N-1]` under the hood.
+Once the gRPC endpoint gets ready, product engineers call the endpoint from product services such as AdServer or LeadScorer to fetch features.
 
-V1 has a big problem - data scientists care most about the feature quality, but it is in data engineers' hands to implement. This mismatch leads to:
+What's weird? While data scientists care most about launching features (so that their fancy models make real world impact), it is actually in data engineers and product engineers' hands to implement! 🤷 This mismatch leads to:
 
-- Slower progress and more error-prone implementation due to cross-team communication.
+- Data engineers and product engineers get side tracked to help data scientists build ad-hoc pipelines and services whenever a new model is in development.
+- Data scientists have a hard time orchestrating the delivery of a new model.
+- Slower progress and more error-prone feature implementation due to cross-team communication.
 - Feature engineering logic has to be simple to avoid further communication costs, as a result, major data transformation logic is delegated to the model, which greatly slows down model inference.
 
 To address these issues, Feature Store V2 aims to:
 
 - Let data scientists gain full control to iterate faster and less error-prone.
+- Free data engineers and product engineers. What they build ad-hoc should be built once and iterated often by ML infra team (us).
 - Hand over more feature engineering to the pipelines so that inference can do less and run faster.
 
 ## Feature Store V2
 
-V2 further splits the broad "feature engineering" into three parts: feature engineering, feature source, and feature ingestion. The overall architecture of Feature Store V2 is shown below.
+V2 further splits the broad term "feature engineering" into three parts: feature engineering, feature source, and feature ingestion. The overall architecture of Feature Store V2 is shown below.
 
 ![v2 architecture](/images/palfish-feature-store/v2-architecture.svg)
 
@@ -168,6 +171,8 @@ class BatchRedisSink(
 ### V2 Summary
 
 Feature Store V2 meets our goals. Now, data scientists own their features end-to-end: design, implement (with SQL and Python), test (locally with Docker), and launch. It leads to less error-prone implementation, and much faster iteration - the process took days, if not weeks, and now it takes only a few hours.
+
+Thanks to the improvement, PalFish is able to deliver models faster and apply ML to more use cases including customer churn.
 
 ## Lessons learned
 
